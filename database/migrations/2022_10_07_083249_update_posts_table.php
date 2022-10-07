@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('saved', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('post_id');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->double('location', 11, 8);
         });
+        
     }
 
     /**
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saved');
+        //
     }
 };
