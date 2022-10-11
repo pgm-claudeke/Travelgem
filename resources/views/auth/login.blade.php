@@ -1,0 +1,46 @@
+@extends('layouts.login')
+
+@section('content')
+<div class="login-register">
+    <div class="logo-box">
+        <h1 class="logo-box__logo">TRAVELGEM</h1>
+        <div class="logo-box__img-box">
+            <img class="logo-box__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
+        </div>
+    </div>
+    <div class="form-box">
+        <div class="form-box__title-box">
+            <h3 class="form-box__title">Welcome to Travelgem</h3>
+            <p>Let's travel together.</p>
+        </div>
+        <div class="form-box__container">
+            <form action="{{ route('login') }}" method="POST" class="form-box__form">
+                @csrf
+
+                @error('email')
+                <div class="form-box__error">
+                    <strong>{{ $message }}</strong>
+                </div>
+                @enderror
+                @error('password')
+                <div class="form-box__error">
+                    <strong>{{ $message }}</strong>
+                </div>
+                @enderror
+                <input type="text" placeholder="Email" class="form-box__input">
+                <input type="password" placeholder="Password" class="form-box__input">
+                <div class="form-box__remember">
+                    <input type="checkbox" name="remember">
+                    <label for="rememner">Remember me</label>
+                </div>
+                <button class="btn btn--large">Login</button>
+            </form>
+        </div>
+        <div class="form-box__register">
+            <p>Don't have an account?</p>
+            <a href="" class="btn btn--large btn--reversed">Sign up</a>
+        </div>
+    </div>
+</div>
+    
+@endsection

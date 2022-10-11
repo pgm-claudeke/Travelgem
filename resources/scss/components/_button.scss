@@ -1,0 +1,20 @@
+.btn {
+    border: none;
+    border-radius: .4rem;
+    padding: 0.5rem 0rem;
+    text-decoration: none;
+
+    background-color: $color_one;
+    color: $color_two;
+    text-align: center;
+}
+
+.btn--reversed {
+    border: solid $color_one 2px;
+    background-color: $color_two;
+    color: $color_one;
+}
+
+.btn--large {
+    width: 100%;
+}

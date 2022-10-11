@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class PostController extends Controller
+class ExploreController extends Controller
 {
     public function index() {
-        return view('post.list');
+        return view('explore.list');
     }
 
     public function detail($id) {
-        return view('post.detail', [
-            'post.id' => $id
+        return view('explore.country', [
+            'explore.id' => $id
         ]);
     } 
 

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\TravelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{id}', [PostController::class, 'detail']); 
+Route::get('/explore', [ExploreController::class, 'index']);
+Route::get('/explore/{id}', [ExploreController::class, 'detail']); 
+
+Route::get('/travel', [TravelController::class, 'index']);
+Route::get('/travel/{id}', [TravelController::class, 'detail']); 
+
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

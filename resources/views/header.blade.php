@@ -1,12 +1,5 @@
-<div class="logo">
+@extends('layouts.app')
 
-</div>
-<div class="search">
+@section('header')
 
-</div>
-<div class="navigation">
-    <ul>
-        <li>Travel</li>
-        <li>Explore</li>
-    </ul>
-</div>
+@endsection

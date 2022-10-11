@@ -1,0 +1,57 @@
+.header_box {
+    width: 100%;
+    background-color: $color_two;
+    padding: 1.4rem 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo_box {
+        padding-left: 4rem;
+
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+            color: $color_one;
+        }
+    }
+
+    .navigation_box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+
+        padding-right: 4rem;
+
+        .navigation {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 1rem;
+        }
+    }
+
+    .search_box {
+        .input {
+            width: 20rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: $color_base solid 2px;
+
+            font-size: 1rem;
+        }
+    }
+
+    .profile_box {
+        height: 2.5rem;
+        aspect-ratio: 1 / 1;
+        background-color: $color_one;
+        border-radius: 50%;
+    }
+}

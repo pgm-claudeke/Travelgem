@@ -1,0 +1,240 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+.page_title_box {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+}
+
+.travel {
+  margin: 2rem 5rem;
+}
+
+.travel__card {
+  height: 15.6rem;
+  width: 24.6rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.travel__card a {
+  text-decoration: none;
+  color: white;
+}
+.travel__card .travel__image-box {
+  height: 15.6rem;
+  width: 24.6rem;
+  background-color: red;
+}
+
+.explore {
+  margin: 2rem 5rem;
+}
+
+.explore__list {
+  list-style: none;
+}
+.explore__list a {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+.explore__list .explore__card {
+  background-color: white;
+  width: 15rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+.explore__list .explore__card .explore__image-box {
+  height: 20rem;
+  width: 100%;
+  border-radius: 5px;
+  background-color: red;
+}
+.explore__list .explore__card .explore__info {
+  margin-top: 0.6rem;
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0rem;
+  text-decoration: none;
+  background-color: #23A5D9;
+  color: white;
+  text-align: center;
+}
+
+.btn--reversed {
+  border: solid #23A5D9 2px;
+  background-color: white;
+  color: #23A5D9;
+}
+
+.btn--large {
+  width: 100%;
+}
+
+.form-box__input {
+  border: solid 1px #F2F2F2;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  width: 100%;
+}
+
+.login-register {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-box {
+  height: 52rem;
+  width: 39.25rem;
+  background-color: white;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.125rem;
+}
+.form-box .form-box__title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.form-box .form-box__title-box .form-box__title {
+  color: #23A5D9;
+  font-size: 1.8rem;
+}
+.form-box .form-box__container {
+  padding-bottom: 3.125rem;
+  border-bottom: solid 1px #F2F2F2;
+  width: 70%;
+}
+.form-box .form-box__container .form-box__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.form-box .form-box__container .form-box__form .form-box__error {
+  color: #FF1F1F;
+  font-size: 1rem;
+  align-self: flex-start;
+  background-color: rgba(255, 116, 116, 0.299);
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+}
+.form-box .form-box__container .form-box__form .form-box__remember {
+  font-size: 0.8rem;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+}
+.form-box .form-box__register {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo-box {
+  height: 52rem;
+  width: 54rem;
+  background-color: white;
+  border-radius: 6px;
+  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.logo-box .logo-box__logo {
+  position: absolute;
+  color: white;
+}
+.logo-box .logo-box__img-box {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.logo-box .logo-box__img-box .logo-box__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header_box {
+  width: 100%;
+  background-color: white;
+  padding: 1.4rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_box .logo_box {
+  padding-left: 4rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.header_box .logo_box a {
+  text-decoration: none;
+  color: #23A5D9;
+}
+.header_box .navigation_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 4rem;
+}
+.header_box .navigation_box .navigation {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 1rem;
+}
+.header_box .search_box .input {
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: #F2F2F2 solid 2px;
+  font-size: 1rem;
+}
+.header_box .profile_box {
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  background-color: #23A5D9;
+  border-radius: 50%;
+}

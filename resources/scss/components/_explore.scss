@@ -1,0 +1,35 @@
+.explore {
+    margin: 2rem 5rem;
+}
+
+.explore__list {
+    list-style: none;
+
+    a {
+        text-decoration: none;
+        color: $color_tree;
+    }
+
+    .explore__card {
+        background-color: $color_two;
+        width: 15rem;
+        height: fit-content;
+        padding: 0.6rem;
+        border-radius: 6px;
+
+        .explore__image-box {
+            height: 20rem;
+            width: 100%;
+            border-radius: 5px;
+            background-color: red;
+        }
+
+        .explore__info {
+            margin-top: 0.6rem;
+            height: 10%;
+
+            display: flex;
+            align-items: center;
+        }
+    }
+}

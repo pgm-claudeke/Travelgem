@@ -2,7 +2,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Country Detail')
+@section('title', 'Explore')
 
 @section('content')
     <h1>post detail</h1>
