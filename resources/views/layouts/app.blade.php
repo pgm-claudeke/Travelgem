@@ -14,28 +14,31 @@
     @section('header')
     <header class="header_box">
         <div class="logo_box">
-            <a href="">
+            <a href="/home">
                 <p>TravelGem</p>
             </a>
         </div>
         <div class="search_box">
             <form action="" method="get">
-                <input type="text" class="input" placeholder="search">
+                <input type="text" class="input input--search" placeholder="search">
             </form>
         </div>
         <div class="navigation_box">
             <ul class="navigation">
-                <li>Travel</li>
-                <li>Explore</li>
+                <li><a href="/home">Explore</a></li>
+                <li><a href="/travel">Travel</a></li>
             </ul>
-            <div class="profile_box">
-
-            </div>
+            <a href="/user">
+                <div class="profile_box">
+                
+                </div>
+            </a>
+            
         </div>
     </header>
     @show
 
-    <div class="container">
+    <div class="content">
         @yield('content')
     </div>
 </body>

@@ -2,9 +2,6 @@
     margin: 2rem 5rem;
 }
 
-.explore__list {
-    list-style: none;
-
     a {
         text-decoration: none;
         color: $color_tree;
@@ -13,7 +10,7 @@
     .explore__card {
         background-color: $color_two;
         width: 15rem;
-        height: fit-content;
+        height: fit-content; 
         padding: 0.6rem;
         border-radius: 6px;
 
@@ -32,4 +29,3 @@
             align-items: center;
         }
     }
-}

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TravelController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,14 @@ use App\Http\Controllers\TravelController;
 |
 */
 
-Route::get('/explore', [ExploreController::class, 'index']);
-Route::get('/explore/{id}', [ExploreController::class, 'detail']); 
+Route::get('/home', [ExploreController::class, 'index']);
+Route::get('/home/{id}', [ExploreController::class, 'detail']); 
 
 Route::get('/travel', [TravelController::class, 'index']);
 Route::get('/travel/{id}', [TravelController::class, 'detail']); 
+
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/{id}', [UserController::class, 'detail']); 
 
 Auth::routes();
 

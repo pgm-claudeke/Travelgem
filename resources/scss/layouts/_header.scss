@@ -34,17 +34,11 @@
             flex-direction: row;
             list-style: none;
             gap: 1rem;
-        }
-    }
 
-    .search_box {
-        .input {
-            width: 20rem;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            border: $color_base solid 2px;
-
-            font-size: 1rem;
+            a {
+                text-decoration: none;
+                color: $color_tree;
+            }
         }
     }
 

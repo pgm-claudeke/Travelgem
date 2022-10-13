@@ -1,6 +1,54 @@
-.form-box__input {
-    border: solid 1px $color_base;
+.input {
+    border: solid 1px $color_tree_lighter;
     border-radius: .4rem;
-    padding: 0.5rem 0.8rem;
+    padding: 0rem 0.8rem;
+    height: $height_inp_btn;
+
+    font-size: 0.9rem;
+}
+
+.input--large {
     width: 100%;
+}
+
+.input--medium {
+    width: 49%;
+}
+
+.input--search {
+    width: 30rem;
+}
+
+.input__row {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input__label{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+::placeholder {
+    color: $color_tree_lighter;
+}
+
+input[type="date"] {
+    width: 100%;
+    height: $height_inp_btn;
+    border:1px solid $color_tree_lighter;
+    border-radius: .4rem;
+    padding: 0rem 0.8rem;
+
+    color: $color_tree_lighter;
+    font-size: 18px;
+
+    display: inline-block !important;
+    visibility: visible !important;
 }
