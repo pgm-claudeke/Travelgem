@@ -10,9 +10,9 @@ class ExploreController extends Controller
         return view('explore.list');
     }
 
-    public function detail($id) {
+    public function detail() {
         return view('explore.country', [
-            'explore.id' => $id
+
         ]);
     } 
 

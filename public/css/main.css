@@ -1,5 +1,6 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap);
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", "sans-serif";
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -17,75 +18,78 @@ body {
   height: 10rem;
 }
 
-.explore {
-  margin: 2rem 5rem;
-}
-
-a {
-  text-decoration: none;
-  color: #4D4D4D;
-}
-
-.explore__card {
-  background-color: white;
-  width: 15rem;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0.6rem;
-  border-radius: 6px;
-}
-.explore__card .explore__image-box {
-  height: 20rem;
-  width: 100%;
-  border-radius: 5px;
-  background-color: red;
-}
-.explore__card .explore__info {
-  margin-top: 0.6rem;
-  height: 10%;
-  display: flex;
-  align-items: center;
-}
-
 .card {
   background-color: white;
-  padding: 0.6rem;
+  padding: 0.4rem;
   border-radius: 6px;
+}
+.card a {
+  text-decoration: none;
 }
 
 .card--post {
-  width: 15rem;
+  width: 14.9rem;
   height: -moz-fit-content;
   height: fit-content;
 }
+.card--post .card__container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+.card--post .card__container .card__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+}
+.card--post .card__info .card__title {
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: #4D4D4D;
+}
 
-.travel-card {
+.card--country {
   width: 22rem;
   aspect-ratio: 3/2;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
-  background-color: white;
-  text-decoration: none;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
-.travel-card .travel-card__image-box {
-  height: 100%;
+.card--country .card__container {
   width: 100%;
-  border-radius: 0.2rem;
-  background-color: #D8D8D8;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
 }
-.travel-card .travel-card__info {
+.card--country .card__container .card__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card--country .card__info {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: white solid 0.4rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.travel-card .travel-card__info .travel-card__title {
-  font-size: 2.5rem;
+.card--country .card__info .card__overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card--country .card__info .card__title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .btn {
@@ -93,7 +97,7 @@ a {
   background-color: #23A5D9;
   border: none;
   border-radius: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -219,14 +223,14 @@ input[type=date] {
 }
 .form-box .form-box__container .form-box__form .form-box__errors .form-box__error {
   color: #FF1F1F;
-  font-size: 0.9rem;
+  font-size: 1rem;
   align-self: flex-start;
   background-color: rgba(255, 116, 116, 0.299);
   width: 100%;
   padding: 0.5rem 0.8rem;
 }
 .form-box .form-box__container .form-box__form .form-box__remember {
-  font-size: 0.9rem;
+  font-size: 1rem;
   align-self: flex-start;
   display: flex;
   flex-direction: row;
@@ -301,6 +305,9 @@ input[type=date] {
   flex-direction: row;
   list-style: none;
   gap: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 .header_box .navigation_box .navigation a {
   text-decoration: none;
