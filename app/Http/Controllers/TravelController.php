@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 
 class TravelController extends Controller
 {
     public function index() {
-        return view('travel.list');
+
+        $countries = Post::all()->pluck('country');
+
+        return view('travel.list', [
+            'countries' => $countries
+        ]);
     }
 
-    public function detail($id) {
-        return view('travel.detail', [
-            'travel.id' => $id
+    public function country($country) {
+        $posts = Post::where('country', $country)
+            ->get()
+        ;
+
+        return view('travel.country', [
+            'posts' => $posts,
+            'country' => $country
         ]);
     } 
-
 }

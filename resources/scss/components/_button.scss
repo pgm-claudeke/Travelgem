@@ -12,6 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .btn--reversed {
@@ -22,4 +26,8 @@
 
 .btn--large {
     width: 100%;
+}
+
+.btn--save {
+    padding: 0rem 1.4rem;
 }

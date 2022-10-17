@@ -8,14 +8,16 @@
 
     <title>@yield('title') - TravelGem</title>
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ab532272c.js" crossorigin="anonymous"></script>
 </head>
-
+ 
 <body>
     @section('header')
     <header class="header_box">
         <div class="logo_box">
-            <a href="/home">
-                <p>TravelGem</p>
+            <a href="/">
+            <img class="header__logo" src="{{ asset('storage/logo/travelgem_logo.svg') }}" alt="travelgem_logo.svg">
             </a>
         </div>
         <div class="search_box">
@@ -25,14 +27,16 @@
         </div>
         <div class="navigation_box">
             <ul class="navigation">
-                <li><a href="/home">Explore</a></li>
+                <li><a href="/">Explore</a></li>
                 <li><a href="/travel">Travel</a></li>
             </ul>
-            <a href="/user">
+            <div>
+                <a href="/user">
                 <div class="profile_box">
                 
                 </div>
             </a>
+            </div>
             
         </div>
     </header>

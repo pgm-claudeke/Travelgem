@@ -25,6 +25,11 @@
     }
 
     .card__info {
+        padding: 0.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
         .card__title {
             font-weight: $medium;
             font-size: $text;

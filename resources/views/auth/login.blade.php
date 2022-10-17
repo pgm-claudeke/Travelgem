@@ -14,7 +14,7 @@
             <p class="form-box__description ">Let's travel together.</p>
         </div>
         <div class="form-box__container">
-            <form action="{{ route('login') }}" method="POST" class="form-box__form">
+            <form action="{{ route('login') }}" method="POST" class="form-box__form"> 
                 @csrf
                 <div class="form-box__errors">
                     @error('email')

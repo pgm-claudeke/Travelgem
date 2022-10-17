@@ -3,16 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function index() {
-        return view('user.list');
+        $user = Auth::user();
+        $userId = $user->id;
+
+        $posts = Post::where('user_id', $userId) 
+            ->get()
+        ;
+
+        return view('user.list', [
+            'user' => $user,
+            'posts' => $posts
+        ]);
     }
 
     public function detail($id) {
+        
+        // eigen post kunnen bewerken
+
         return view('user.detail', [
-            'user.id' => $id
+            'user.id' => $id,
         ]);
     } 
 

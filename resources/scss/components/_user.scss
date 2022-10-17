@@ -1,0 +1,57 @@
+.user {
+    width: 100%;
+    background-color: $color_two;
+    border-radius: 6px;
+    padding: 1.4rem 4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .user__info {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+
+        .user__img-box {
+            width: 4rem;
+            aspect-ratio: 1/1;
+            background-color: $color_one;
+            border-radius: 50%;
+        }
+
+        .user__name {
+            font-size: 1.4rem;
+            font-weight: $medium;
+        }
+    }
+
+    .user__activities {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        .user__activity {
+            border: none;
+            background: transparent;
+
+            font-size: 1rem;
+            font-weight: $medium;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .user__activity--icon {
+            font-size: 1.2rem;
+        }
+
+        .user__activity--link {
+            text-decoration: none;
+            color: $color_tree;
+        }
+    }
+}

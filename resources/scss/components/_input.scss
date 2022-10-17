@@ -19,6 +19,11 @@
     width: 30rem;
 }
 
+.input--text {
+    height: 5rem;
+    padding: 0.4rem 0.8rem;
+}
+
 .input__row {
     width: 100%;
 
@@ -51,4 +56,9 @@ input[type="date"] {
 
     display: inline-block !important;
     visibility: visible !important;
+}
+
+.input--file { 
+    border: none;
+    padding: 0;
 }

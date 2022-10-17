@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddPostController;
+use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +19,17 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/home', [ExploreController::class, 'index']);
-Route::get('/home/{id}', [ExploreController::class, 'detail']); 
+Route::get('/', [ExploreController::class, 'index']);
+
+Route::get('post/{id}', [PostController::class, 'index']); 
 
 Route::get('/travel', [TravelController::class, 'index']);
-Route::get('/travel/{id}', [TravelController::class, 'detail']); 
+Route::get('/travel/{country}', [TravelController::class, 'country']); 
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/{id}', [UserController::class, 'detail']); 
+
+Route::get('/add-post', [AddPostController::class, 'index']);
 
 Auth::routes();
 

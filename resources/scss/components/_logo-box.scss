@@ -19,17 +19,17 @@
         color: $color_two;
         scale: 0.6;
     }
+}
 
-    .logo-box__img-box {
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        border-radius: 4px;
+.logo-box__img-box {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+}
 
-        .logo-box__img {
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    }
+.logo-box__img {
+    width: 100%; 
+    object-fit: cover;
+    overflow: hidden;
+}

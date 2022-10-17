@@ -1,0 +1,18 @@
+.select {
+    .select__btn {
+        color: $color-two;
+        font-size: 1rem;
+
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        background-color: $color-one;
+        border: none;
+        border-radius: 6px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+}

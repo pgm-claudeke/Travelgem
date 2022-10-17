@@ -7,66 +7,18 @@
 @section('content')
     <section class="section">
         <ul class="list">
+            @foreach($posts as $post)
             <li class="card card--post">
-                <a href="">
+                <a href="/post/{{ $post->id }}">
                     <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
+                        <img class="card__img" src="{{ asset('storage/images/$post->image') }}" alt={{$post->image}}>
                     </div>
                     <div class="card__info">
-                        <p class="card__title">Title</p>
+                        <p class="card__title">{{$post->title}}</p>
                     </div>
                 </a>
             </li>
-            <li class="card card--post">
-                <a href="">
-                    <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
-                    </div>
-                    <div class="card__info">
-                        <p class="card__title">Title</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card card--post">
-                <a href="">
-                    <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
-                    </div>
-                    <div class="card__info">
-                        <p class="card__title">Title</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card card--post">
-                <a href="">
-                    <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
-                    </div>
-                    <div class="card__info">
-                        <p class="card__title">Title</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card card--post">
-                <a href="">
-                    <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
-                    </div>
-                    <div class="card__info">
-                        <p class="card__title">Title</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card card--post">
-                <a href="">
-                    <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
-                    </div>
-                    <div class="card__info">
-                        <p class="card__title">Title</p>
-                    </div>
-                </a>
-            </li>
+            @endforeach
         </ul>
     </section>
 @endsection

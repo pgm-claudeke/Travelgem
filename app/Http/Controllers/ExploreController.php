@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller; 
+use App\Models\Post;
 
 class ExploreController extends Controller
 {
     public function index() {
-        return view('explore.list');
-    }
+        $posts = Post::all();
 
-    public function detail() {
-        return view('explore.country', [
+         //post opslaan
 
+        return view('explore.list', [
+            'posts' => $posts,
         ]);
-    } 
-
+    }
 }
