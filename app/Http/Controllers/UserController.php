@@ -18,16 +18,16 @@ class UserController extends Controller
 
         return view('user.list', [
             'user' => $user,
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 
-    public function detail($id) {
-        
-        // eigen post kunnen bewerken
+    public function settings() {
+        $user = Auth::user();
+        echo $user;
 
-        return view('user.detail', [
-            'user.id' => $id,
+        return view('user.settings', [
+            'user' => $user,
         ]);
     } 
 

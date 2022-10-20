@@ -11,6 +11,9 @@
 .card--post {
     width: 14.9rem;
     height: fit-content;
+    font-weight: $medium;
+    font-size: $text;
+
 
     .card__container {
         width: 100%;
@@ -27,14 +30,21 @@
     .card__info {
         padding: 0.2rem;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .card__location {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            color: $color_one;
+            font-size: 0.85rem;
+        }
 
         .card__title {
-            font-weight: $medium;
-            font-size: $text;
             letter-spacing: 0.5px;
             color: $color_tree;
+            font-size: 1rem;
         }
     }
 }

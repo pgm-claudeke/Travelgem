@@ -31,6 +31,8 @@ body {
   width: 14.9rem;
   height: -moz-fit-content;
   height: fit-content;
+  font-weight: 500;
+  font-size: 1rem;
 }
 .card--post .card__container {
   width: 100%;
@@ -46,14 +48,20 @@ body {
 .card--post .card__info {
   padding: 0.2rem;
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card--post .card__info .card__location {
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 0.5rem;
+  color: #23A5D9;
+  font-size: 0.85rem;
 }
 .card--post .card__info .card__title {
-  font-weight: 500;
-  font-size: 1rem;
   letter-spacing: 0.5px;
   color: #4D4D4D;
+  font-size: 1rem;
 }
 
 .card--country {
@@ -311,6 +319,12 @@ input[type=date] {
   font-weight: 900;
   margin-bottom: 1rem;
 }
+.post .post__info .post__user {
+  margin-top: 1.5rem;
+}
+.post .post__info .post__user .post__username {
+  font-weight: 900;
+}
 
 .icon {
   color: #23A5D9;
@@ -507,7 +521,7 @@ input[type=date] {
   flex-wrap: wrap;
   gap: 0.9rem;
   list-style: none;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .content {

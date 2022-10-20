@@ -16,7 +16,7 @@
     @section('header')
     <header class="header_box">
         <div class="logo_box">
-            <a href="/">
+            <a href="/home">
             <img class="header__logo" src="{{ asset('storage/logo/travelgem_logo.svg') }}" alt="travelgem_logo.svg">
             </a>
         </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="navigation_box">
             <ul class="navigation">
-                <li><a href="/">Explore</a></li>
+                <li><a href="/home">Explore</a></li>
                 <li><a href="/travel">Travel</a></li>
             </ul>
             <div>

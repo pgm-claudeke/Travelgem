@@ -17,13 +17,17 @@
                         <i class="fa-solid fa-location-dot icon icon--location"></i>   
                         <p class="post__subtitle">{{$post->country}}, {{$post->city}}</p>
                     </div>
+                    @if ($post->user_id === $user->id)
+                    <button class="btn btn--save">Edit</button>
+                    @else
                     <button class="btn btn--save">Save</button>
+                    @endif
                 </div>
                 <div class="post__container post__container--info">  
                     <p class="post__title">{{$post->title}}</p> 
                     <p class="post__description">{{$post->description}}</p>
                     <div class="post__user">
-
+                        <p class="post__username">{{$postUser->username}}</p>
                     </div>
                 </div>
                 <div class="post__container post__container--info post__container--column">

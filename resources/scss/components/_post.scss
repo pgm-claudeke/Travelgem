@@ -74,6 +74,14 @@
             font-weight: $bold;
             margin-bottom: 1rem;
         }
+
+        .post__user {
+            margin-top: 1.5rem;
+
+            .post__username {
+                font-weight: $bold;
+            }
+        }
     
     }
 }
