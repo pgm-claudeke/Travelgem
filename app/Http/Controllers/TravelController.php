@@ -20,6 +20,7 @@ class TravelController extends Controller
 
     public function country($country) {
         $posts = Post::where('country', $country)
+            ->inRandomOrder()
             ->get()
         ;
 

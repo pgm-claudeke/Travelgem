@@ -61,7 +61,7 @@
         .post__container--column{
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
         .post__subtitle {
@@ -81,6 +81,31 @@
             .post__username {
                 font-weight: $bold;
             }
+        }
+
+        .post__comments {
+            list-style: none;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .post__comment {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 0.5rem;
+
+                .post__user {
+                    margin: 0;
+                }
+            }
+        }
+
+        .post__new-comment {
+            display: flex;
+            flex-direction: row;
+            gap: 0.6rem;
         }
     
     }

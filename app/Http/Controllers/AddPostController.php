@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class AddPostController extends Controller
 {
@@ -20,9 +21,10 @@ class AddPostController extends Controller
         $post = ($id) ? Post::findOrFail($id) : new Post();
 
         if( $request->file('image') ) {
-            $uploaded_path = $request ->file('photo')->store('posts');
+            $uploaded_path = $request->file('image')->store('public/posts');
             $filename = basename($uploaded_path);
         };
+    
 
         $post->user_id = $userId;
         $post->country = $request->input('country');
@@ -33,7 +35,7 @@ class AddPostController extends Controller
             $post->image = $filename;
         };
 
-        $post->save();
+        $post->save(); 
 
         return redirect('/post/' . $post->id);
     }

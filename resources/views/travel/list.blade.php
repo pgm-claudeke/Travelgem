@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/' .$post->image) }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
+                        <img class="card__img" src="{{ asset('storage/posts/' .$post->image) }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
                     </div>
                 </a>
             </li>

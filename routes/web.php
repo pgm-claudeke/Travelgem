@@ -22,14 +22,15 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/home', [ExploreController::class, 'index']);
 
 Route::get('post/{id}', [PostController::class, 'index']); 
+Route::post('/store-comment', [PostController::class, 'storeComment']);
 
 Route::get('/travel', [TravelController::class, 'index']);
 Route::get('/travel/{country}', [TravelController::class, 'country']); 
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/settings', [UserController::class, 'settings']); 
-
-Route::get('/add-post', [AddPostController::class, 'index']);
+Route::get('user/add-post', [AddPostController::class, 'index']);
+Route::post('/store-post', [AddPostController::class, 'save']);
 
 Auth::routes();
 

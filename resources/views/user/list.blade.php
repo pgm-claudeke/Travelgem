@@ -11,9 +11,9 @@
             <p class="user__name">{{$user->username}}</p>
         </div>
         <div class="user__activities">
-            <button class="user__activity">Posts {{count($posts)}}</button>
-            <button class="user__activity">Saved</i></button>
-            <a href="/add-post" class="user__activity user__activity--link user__activity--icon"><i class="fa-regular fa-square-plus"></i></a>
+            <a href="/user" class="user__activity">Posts {{count($posts)}}</a>
+            <a href="/user/saved" class="user__activity">Saved</i></button>
+            <a href="/user/add-post" class="user__activity user__activity--link user__activity--icon"><i class="fa-regular fa-square-plus"></i></a>
         </div>
     </div>
 </section>
@@ -24,7 +24,7 @@
             <li class="card card--post">
                 <a href="/post/{{ $post->id }}">
                     <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/images/' . $post->image) }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
+                        <img class="card__img" src="{{ asset('storage/posts/' . $post->image) }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
                     </div>
                     <div class="card__info">
                         <p class="card__title">{{$post->title}}</p>

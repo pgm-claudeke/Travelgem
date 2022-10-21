@@ -8,7 +8,7 @@ use App\Models\Post;
 class ExploreController extends Controller
 {
     public function index() {
-        $posts = Post::all();
+        $posts = Post::inRandomOrder()->get();
 
          //post opslaan
 

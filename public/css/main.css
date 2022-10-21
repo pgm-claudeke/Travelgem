@@ -137,6 +137,11 @@ body {
   padding: 0rem 1.4rem;
 }
 
+.btn--comment {
+  width: 4rem;
+  height: 2.5rem;
+}
+
 .input {
   border: solid 1px #D8D8D8;
   border-radius: 0.4rem;
@@ -160,6 +165,11 @@ body {
 .input--text {
   height: 5rem;
   padding: 0.4rem 0.8rem;
+}
+
+.input--comment {
+  height: 2.5rem;
+  padding: 0.7rem 0.8rem;
 }
 
 .input__row {
@@ -237,6 +247,8 @@ input[type=date] {
   background: transparent;
   font-size: 1rem;
   font-weight: 500;
+  color: #4D4D4D;
+  text-decoration: none;
 }
 .user .user__activities .user__activity:hover {
   cursor: pointer;
@@ -308,7 +320,7 @@ input[type=date] {
 .post .post__info .post__container--column {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .post .post__info .post__subtitle {
   font-size: 1rem;
@@ -324,6 +336,26 @@ input[type=date] {
 }
 .post .post__info .post__user .post__username {
   font-weight: 900;
+}
+.post .post__info .post__comments {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.post .post__info .post__comments .post__comment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.post .post__info .post__comments .post__comment .post__user {
+  margin: 0;
+}
+.post .post__info .post__new-comment {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
 }
 
 .icon {

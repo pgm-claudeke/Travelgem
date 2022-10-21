@@ -13,6 +13,7 @@ class UserController extends Controller
         $userId = $user->id;
 
         $posts = Post::where('user_id', $userId) 
+            ->latest()
             ->get()
         ;
 
