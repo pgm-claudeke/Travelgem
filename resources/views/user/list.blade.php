@@ -12,7 +12,7 @@
         </div>
         <div class="user__activities">
             <a href="/user" class="user__activity">Posts {{count($posts)}}</a>
-            <a href="/user/saved" class="user__activity">Saved</i></button>
+            <a href="/user/saved" class="user__activity">Saved {{count($saves)}}</i></button>
             <a href="/user/add-post" class="user__activity user__activity--link user__activity--icon"><i class="fa-regular fa-square-plus"></i></a>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 <section>
     <ul class="list">
-            @foreach($posts as $post)
+            @foreach($posts as $post) 
             <li class="card card--post">
                 <a href="/post/{{ $post->id }}">
                     <div class="card__container">

@@ -17,7 +17,7 @@
         width: 49.5%;
         max-width: 49.5%;
         min-height: fit-content;
-        height: 100%;
+        height: fit-content;
         max-height: 100%;
 
         .post__image-box {
@@ -25,6 +25,7 @@
             width: 100%;
             overflow: hidden;
             border-radius: 3px;
+            font-size: 0;
         }
         
         .post__image {
@@ -106,6 +107,13 @@
             display: flex;
             flex-direction: row;
             gap: 0.6rem;
+        }
+
+        .post__edit {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
         }
     
     }

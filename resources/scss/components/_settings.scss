@@ -1,0 +1,40 @@
+.settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    .settings__topic-box {
+        width: 15%;
+
+        .settings__topic-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .settings__topic {
+                background-color: $color_two;
+                padding: 1rem;
+                border-radius: 0.3rem;
+
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    }
+
+    .settings__container {
+        background-color: $color_two;
+        width: 85%;
+        border-radius: 0.3rem;
+        padding: 2rem 3rem;
+
+        .settings__title {
+            color: $color_one;
+            font-size: 1.8rem;
+            font-weight: $bold;
+        }
+    }
+}

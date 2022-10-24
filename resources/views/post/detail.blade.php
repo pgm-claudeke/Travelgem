@@ -18,9 +18,22 @@
                         <p class="post__subtitle">{{$post->country}}, {{$post->city}}</p>
                     </div>
                     @if ($post->user_id === $user->id)
-                    <button class="btn btn--save">Edit</button>
+                    <div class="post__edit">
+                        <a class="btn btn--save" href="{{$post->id}}/edit">Edit</a>
+                        <form action="{{url('post/' . $post->id . '/delete-post')}}" method="GET">
+                            <button class="btn btn--save" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </div>
                     @else
-                    <button class="btn btn--save">Save</button>
+                    <form action="{{url('/saved-post')}}" method="POST">
+                    @csrf
+                        <input type="hidden" value="{{$post->id}}" name="post_id">
+                        @if($saved)
+                        <p>saved</p>
+                        @else
+                        <button class="btn btn--save" type="submit">Save</button>
+                        @endif
+                    </form>
                     @endif
                 </div>
                 <div class="post__container post__container--info">  
@@ -53,6 +66,17 @@
                         <input type="hidden" value="{{$post->id}}" name="post_id">
                         <button type="submit" class="btn btn--comment"><i class="fa-solid fa-paper-plane"></i></button>
                     </form>
+                </div>
+                <div class="post__container post__container--info">
+                    <div class="post__w-icon">
+                        <p class="post__subtitle">Tags</p>
+                        <i class="fa-solid fa-chevron-down icon icon--chevron"></i>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

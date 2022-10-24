@@ -280,7 +280,8 @@ input[type=date] {
   max-width: 49.5%;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  height: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   max-height: 100%;
 }
 .post .post__container--image .post__image-box {
@@ -288,6 +289,7 @@ input[type=date] {
   width: 100%;
   overflow: hidden;
   border-radius: 3px;
+  font-size: 0;
 }
 .post .post__container--image .post__image {
   width: 100%;
@@ -357,6 +359,12 @@ input[type=date] {
   flex-direction: row;
   gap: 0.6rem;
 }
+.post .post__info .post__edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 .icon {
   color: #23A5D9;
@@ -383,6 +391,42 @@ input[type=date] {
   flex-direction: row;
   gap: 0.8rem;
   align-items: center;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.settings .settings__topic-box {
+  width: 15%;
+}
+.settings .settings__topic-box .settings__topic-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.settings .settings__topic-box .settings__topic-list .settings__topic {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.settings .settings__container {
+  background-color: white;
+  width: 85%;
+  border-radius: 0.3rem;
+  padding: 2rem 3rem;
+}
+.settings .settings__container .settings__title {
+  color: #23A5D9;
+  font-size: 1.8rem;
+  font-weight: 900;
 }
 
 .login-register {
@@ -557,7 +601,7 @@ input[type=date] {
 }
 
 .content {
-  margin: 2rem 5rem;
+  margin: 2rem 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -587,6 +631,10 @@ input[type=date] {
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
+}
+
+.section--column {
+  flex-direction: column;
 }
 
 /*!
