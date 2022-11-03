@@ -1,0 +1,98 @@
+.table {
+    .table__row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        list-style: none;
+        padding: 0.5rem 0rem 0.5rem 1rem;
+        border-radius: $radius;
+    }
+
+    .table__row--labels {
+        background-color: $color_base;
+        padding: 1rem 0rem 1rem 1rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+
+    .table__info {
+        color: $color_tree;
+        
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .table__info--short {
+        width: 5%;
+    }
+
+    .table__info--medium {
+        width: 10%;
+    }
+
+    .table__info--mid-long {
+        width: 15%;
+    }
+    .table__info--long {
+        width: 20%;
+    }
+    .table__info--extra-long {
+        width: 25%;
+    }
+
+    .table__btn {
+        border: none;
+        background-color: $color_two;
+        font-size: 0.9rem;
+        color: $color_tree;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .table__btn--delete {
+        &:hover {
+            color: $color_error;
+        }
+    }
+
+    .table__btn--edit {
+        &:hover {
+            color: $color_edit;
+        }
+    }
+
+    .table__btn--done {
+        &:hover {
+            color: $color_one;
+        }
+    }
+
+    .table__btn--link {
+        color: $color_tree;
+        
+        &:hover {
+            color: $color_one;
+        }
+    }
+
+    .table__img {
+        height: 5rem;
+    }
+
+    .table__edit {
+        display: flex;
+        gap: 1rem;
+
+    }
+
+    .tag-hide {
+        display: none;
+    }
+}

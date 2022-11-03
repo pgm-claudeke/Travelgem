@@ -1,5 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/dataTags.js": "/js/dataTags.js",
+    "/js/explore.js": "/js/explore.js",
+    "/js/country.js": "/js/country.js",
+    "/js/post.js": "/js/post.js",
     "/css/main.css": "/css/main.css",
     "/css/app.min.css": "/css/app.min.css",
     "/webfonts/fa-brands-400.ttf": "/webfonts/fa-brands-400.ttf",

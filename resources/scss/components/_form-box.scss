@@ -84,3 +84,15 @@
         gap: 1rem;
     }
 }
+
+.form-box--post {
+    height: fit-content;
+    padding: 2rem 0rem;
+
+    .input__tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}

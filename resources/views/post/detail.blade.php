@@ -24,16 +24,22 @@
                             <button class="btn btn--save" type="submit"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </div>
-                    @else
-                    <form action="{{url('/saved-post')}}" method="POST">
-                    @csrf
-                        <input type="hidden" value="{{$post->id}}" name="post_id">
+                    @else 
+                    <div>
                         @if($saved)
-                        <p>saved</p>
+                        <form action="" method="POST">
+                        @csrf
+                            <input type="hidden" value="{{$post->id}}" name="post_id">
+                            <button class="btn btn--unsave">Unsave</button>
+                        </form>
                         @else
-                        <button class="btn btn--save" type="submit">Save</button>
+                        <form action="{{url('/saved-post')}}" method="POST">
+                        @csrf
+                            <input type="hidden" value="{{$post->id}}" name="post_id">
+                            <button class="btn btn--save" type="submit">Save</button>
+                        </form>
                         @endif
-                    </form>
+                    </div>
                     @endif
                 </div>
                 <div class="post__container post__container--info">  
@@ -44,11 +50,8 @@
                     </div>
                 </div>
                 <div class="post__container post__container--info post__container--column">
-                    <div class="post__w-icon">
-                        <p class="post__subtitle">Comments</p>
-                        <i class="fa-solid fa-chevron-down icon icon--chevron"></i>
-                    </div>
-                    <div>
+                    <p class="post__subtitle">Comments</p>
+                    <div class="post__comments">
                         <ul class="post__comments">
                             @foreach($comments as $comment)
                                 <li class="post__comment">
@@ -62,19 +65,18 @@
                     </div>   
                     <form action="{{url('/store-comment')}}" method="POST" class="post__new-comment">
                     @csrf
-                        <textarea name="comment" id="commend" cols="30" rows="10" class="input input--large input--comment"></textarea>
+                        <input type="text" name="comment" id="commend" cols="30" rows="10" class="input input--large input--comment">
                         <input type="hidden" value="{{$post->id}}" name="post_id">
                         <button type="submit" class="btn btn--comment"><i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>
                 <div class="post__container post__container--info">
-                    <div class="post__w-icon">
-                        <p class="post__subtitle">Tags</p>
-                        <i class="fa-solid fa-chevron-down icon icon--chevron"></i>
-                    </div>
+                    <p class="post__subtitle">Tags</p>
                     <div>
                         <ul>
-                            
+                            @foreach($tags as $tag)
+                            <li>#{{$tag->name}}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

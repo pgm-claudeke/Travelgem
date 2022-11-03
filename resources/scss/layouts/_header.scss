@@ -22,6 +22,10 @@
         }
     }
 
+    .search_box {
+        width: 30%;
+    }
+
     .navigation_box {
         display: flex;
         flex-direction: row;
@@ -45,6 +49,47 @@
                 color: $color_tree;
             }
         }
+
+        .navigation__user {
+            position: relative;
+
+            .user-options {
+                position: absolute;
+                top: 3rem;
+                right: -2.5rem;
+                background-color: $color_two;
+                padding: 1.5rem;
+                border-radius: $radius;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+
+                .user-options__list {
+                    list-style: none;
+                    margin: 0;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    li {
+                        a {
+                            text-decoration: none;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            color: $color_tree;
+                        }
+                    }
+                }
+            }
+
+            .user-options--hide {
+                display: none;
+            }
+
+            .user-options--show {
+                display: block;
+            }
+        }
     }
 
     .profile_box {
@@ -52,6 +97,10 @@
         aspect-ratio: 1 / 1;
         background-color: $color_one;
         border-radius: 50%;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 

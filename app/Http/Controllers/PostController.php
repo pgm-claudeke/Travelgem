@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Post;
 use App\Models\Save;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,11 @@ class PostController extends Controller
 {
     public function index($id) {
         $post = Post::find($id);
+
+        $tags = Tag::join('post_tag', 'tags.id', '=', 'post_tag.tag_id')
+        ->where('post_tag.post_id', $id)
+        ->get('tags.*')
+        ;
 
         $postUser = User::where('id', $post->user_id)->first();
 
@@ -32,7 +38,8 @@ class PostController extends Controller
             'user' => $user,
             'postUser' => $postUser,
             'comments' => $comments,
-            'saved' => $saved
+            'saved' => $saved,
+            'tags' => $tags
         ]);
     }
 
@@ -76,8 +83,14 @@ class PostController extends Controller
 
         $saves = Save::all();
 
-        echo $post;
-        echo $saves;
+        $tags = Tag::all();
+
+        $currentTags = Tag::join('post_tag', 'tags.id', '=', 'post_tag.tag_id')
+        ->where('post_tag.post_id', $id)
+        ->get('tags.id')
+        ;
+
+        echo $currentTags;
 
         $comments = Comment::join('users', 'comments.user_id', '=', 'users.id')
             ->where('post_id', $id)
@@ -89,7 +102,9 @@ class PostController extends Controller
             'post' => $post,
             'user' => $user,
             'postUser' => $postUser,
-            'comments' => $comments
+            'comments' => $comments,
+            'tags' => $tags,
+            'currentTags' => $currentTags
         ]);
     }
 
@@ -103,13 +118,13 @@ class PostController extends Controller
         $post->description = $request->input('description');
 
         $post->save();
+        $post->tags()->sync($request->input('tags'));
 
         return redirect('/post/' . $postId);
     }
 
     public function deletePost($id){
         Post::find($id)->delete();
-        echo ($id);
 
         return redirect('/home');
     }

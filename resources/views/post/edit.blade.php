@@ -27,6 +27,22 @@
                 <div class="post__container post__container--info">  
                     <input class="post__title input input--large" type="text" name="title" placeholder="Title" value="{{$post->title}}">
                     <input class="post__description input input--large" type="textarea" name="description" placeholder="Description" value="{{$post->description}}">
+                </div> 
+                <div class="post__container post__container--info">
+                    <label for="tags" class="post__title">Tags</label>
+                    <div class="input__tags">
+                        @foreach($tags as $tag)
+                        <div>
+                            <p>{{$tag->id}}</p>
+                            @if($post->tags->contains('id', $tag->id))
+                            <input type="checkbox" value="{{$tag->id}}" id="tags" name="tags[]" checked>
+                            @else
+                            <input type="checkbox" value="{{$tag->id}}" id="tags" name="tags[]">
+                            @endif
+                            <label for="">{{$tag->name}}</label>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
                 <button class="btn" type="submit">Done</button>
             </div>

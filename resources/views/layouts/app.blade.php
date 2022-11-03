@@ -16,7 +16,7 @@
 <body>
     @section('header')
     <header class="header_box">
-        <div class="logo_box">
+        <div class="logo_box"> 
             <a href="/home">
             <img class="header__logo" src="{{ asset('storage/logo/travelgem_logo.svg') }}" alt="travelgem_logo.svg">
             </a>
@@ -30,23 +30,30 @@
             <ul class="navigation">
                 <li><a href="/home">Explore</a></li>
                 <li><a href="/travel">Travel</a></li>
-                <li><a href="/logout">Logout</a></li>
             </ul>
-            <div>
-                <a href="/user">
+            <div class="navigation__user">
                 <div class="profile_box">
-                
                 </div>
-            </a>
+                <div class="user-options user-options--hide">
+                    <ul class="user-options__list">
+                        <li><a href="/user"><i class="fa-solid fa-circle-user"></i> Profile</a></li>
+                        <li><a href="/user/settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                        @if($user->role_id === "2")
+                        <li><a href="/admin"><i class="fa-solid fa-database"></i> Database</a></li>
+                        @endif
+                        <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
             </div>
-            
         </div>
     </header>
     @show
 
     <div class="content">
-        @yield('content')
+    @yield('content')
     </div>
+    @yield('script')
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

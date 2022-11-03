@@ -18,12 +18,10 @@
         max-width: 49.5%;
         min-height: fit-content;
         height: fit-content;
-        max-height: 100%;
 
         .post__image-box {
             height: 100%;
             width: 100%;
-            overflow: hidden;
             border-radius: 3px;
             font-size: 0;
         }
@@ -117,4 +115,8 @@
         }
     
     }
+}
+
+.post__comments-icon--hide {
+    display: none;
 }

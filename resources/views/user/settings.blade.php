@@ -1,24 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="section">
-    <div class="user">
-        <div class="user__info">
-            <div class="user__img-box">
 
-            </div>
-            <p class="user__name">{{$user->username}}</p>
-        </div>
-        <div class="user__activities">
-            <a href="/user" class="user__activity">Posts</a>
-            <a href="/user/saved" class="user__activity">Saved </i></button>
-                <a href="/user/add-post" class="user__activity user__activity--link user__activity--icon"><i
-                        class="fa-regular fa-square-plus"></i></a>
-                <a href="/user/settings" class="user__activity user__activity--link user__activity--icon"><i
-                        class="fa-solid fa-gear"></i></a>
-        </div>
-    </div>
-</section>
 <section class="section settings">
     <div class="settings__topic-box">
         <ul class="settings__topic-list">
@@ -28,27 +11,28 @@
     </div>
     <div class="settings__container">
         <p class="settings__title">Account Settings</p>
-        <form action="">
+        <form action="" class="settings__form">
         <div>
             <p>Profile Image</p>
+            <input type="file">
         </div>
-        <div>
-            <div>
-                <label>Firstname</label>
-                <p>{{$user->firstName}}</p>
+        <div class="settings__box settings__box--row">
+            <div class="settings__box">
+                <label class="settings__label">Firstname</label>
+                <input type="text" value="{{$user->firstName}}" class="input">
             </div>
-            <div>
-                <label>Lastname</label>
-                <p>{{$user->lastName}}</p>
+            <div class="settings__box">
+                <label  class="settings__label">Lastname</label>
+                <input type="text" value="{{$user->lastName}}" class="input">
             </div>
         </div>
-        <div>
-            <label>username</label>
-            <p>{{$user->userName}}</p>
+        <div class="settings__box">
+            <label  class="settings__label">username</label>
+            <input type="text" value="{{$user->userName}}" class="input">
         </div>
-        <div>
-            <label>email</label>
-            <p>{{$user->email}}</p>
+        <div class="settings__box">
+            <label  class="settings__label">email</label>
+            <input type="text" value="{{$user->email}}" class="input">
         </div>
         <button type="submit">Edit Account</button>
         </form>

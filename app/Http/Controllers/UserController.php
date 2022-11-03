@@ -18,12 +18,14 @@ class UserController extends Controller
             ->get()
         ;
 
-        $saves = Save::where('user_id', $userId)->get();
+        $numberOfPosts = Post::where('user_id', $userId)->count();
+        $numberOfSaves = Save::where('saves.user_id', $userId)->join('posts', 'saves.post_id', '=', 'posts.id')->count();
 
         return view('user.list', [
             'user' => $user,
             'posts' => $posts,
-            'saves' => $saves
+            'numberOfPosts' => $numberOfPosts,
+            'numberOfSaves' => $numberOfSaves,
         ]);
     }
 
@@ -40,10 +42,15 @@ class UserController extends Controller
             ->get()
         ;
 
+        $numberOfPosts = Post::where('user_id', $user->id)->count();
+        $numberOfSaves = Save::where('saves.user_id', $user->id)->join('posts', 'saves.post_id', '=', 'posts.id')->count();
+
         return view('user.saved', [
             'user' => $user, 
             'saves' => $saves,
-            'posts' => $posts
+            'posts' => $posts,
+            'numberOfPosts' => $numberOfPosts,
+            'numberOfSaves' => $numberOfSaves,
         ]);
     }
 

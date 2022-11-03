@@ -5,7 +5,10 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddPostController;
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -19,6 +22,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
+Route::get('/', [HomeController::class,'index']);
+
+
 Route::get('/home', [ExploreController::class, 'index']);
 
 Route::get('post/{id}', [PostController::class, 'index']); 
@@ -29,14 +37,25 @@ Route::post('/store-comment', [PostController::class, 'storeComment']);
 Route::post('/saved-post', [PostController::class, 'savePost']);
 
 Route::get('/travel', [TravelController::class, 'index']);
-Route::get('/travel/{country}', [TravelController::class, 'country']); 
+Route::get('/travel/{country}/{city?}', [TravelController::class, 'country']);
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/saved', [UserController::class, 'saved']);
 Route::get('/user/settings', [UserController::class, 'settings']); 
-Route::get('user/add-post', [AddPostController::class, 'index']);
+Route::get('/user/add-post', [AddPostController::class, 'index']);
 Route::post('/store-post', [AddPostController::class, 'save']);
 
-Auth::routes();
+Route::get('/admin', [DataController::class, 'index']);
+Route::get('/admin/{id}/delete', [DataController::class, 'deleteUser']);
+Route::get('/admin/posts', [DataController::class, 'posts']);
+Route::get('/admin/posts/{id}/delete', [DataController::class, 'deletePost']);
+Route::get('/admin/tags', [DataController::class, 'tags']);
+Route::get('/admin/tags/{id}/delete', [DataController::class, 'deleteTag']);
+Route::post('/admin/tags/added', [DataController::class, 'postTag']);
+Route::post('/admin/tags/edited', [DataController::class, 'editTag']);
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform');
+});

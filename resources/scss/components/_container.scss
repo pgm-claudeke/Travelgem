@@ -1,0 +1,23 @@
+.container {
+    background-color: $color_two;
+    border-radius: $radius;
+    padding: 1rem;
+    padding: 2rem 3rem;
+
+    .container__title {
+        color: $color_one;
+        font-size: 1.8rem;
+        font-weight: $bold;
+        margin-bottom: .5rem;
+    }
+}
+
+.container--side-nav {
+    width: 85%;
+}
+
+.container--data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
