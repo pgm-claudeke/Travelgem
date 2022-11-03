@@ -90,8 +90,6 @@ class PostController extends Controller
         ->get('tags.id')
         ;
 
-        echo $currentTags;
-
         $comments = Comment::join('users', 'comments.user_id', '=', 'users.id')
             ->where('post_id', $id)
             ->get(['comments.*','users.username'])

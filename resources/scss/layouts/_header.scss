@@ -92,11 +92,18 @@
         }
     }
 
-    .profile_box {
+    .profile__box {
         height: 2.5rem;
         aspect-ratio: 1 / 1;
         background-color: $color_one;
         border-radius: 50%;
+        overflow: hidden;
+
+        .profile__img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
         &:hover {
             cursor: pointer;

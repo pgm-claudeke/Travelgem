@@ -170,6 +170,10 @@ body {
   align-items: center;
 }
 
+.btn--red {
+  background-color: #FF1F1F;
+}
+
 .input {
   border: solid 1px #D8D8D8;
   border-radius: 0.4rem;
@@ -258,8 +262,15 @@ input[type=date] {
 .user .user__info .user__img-box {
   width: 4rem;
   aspect-ratio: 1/1;
-  background-color: #23A5D9;
   border-radius: 50%;
+  overflow: hidden;
+}
+.user .user__info .user__img-box .user__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .user .user__info .user__name {
   font-size: 1.4rem;
@@ -536,6 +547,11 @@ input[type=date] {
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
+.container .container__row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
 
 .container--side-nav {
   width: 85%;
@@ -547,10 +563,49 @@ input[type=date] {
   gap: 1.5rem;
 }
 
+.container--edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .search-form {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form .form__label {
+  font-size: 1rem;
+}
+.form .form__row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.form .form__column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-img {
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-img .user-img__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .login-register {
@@ -751,13 +806,21 @@ input[type=date] {
 .header_box .navigation_box .navigation__user .user-options--show {
   display: block;
 }
-.header_box .profile_box {
+.header_box .profile__box {
   height: 2.5rem;
   aspect-ratio: 1/1;
   background-color: #23A5D9;
   border-radius: 50%;
+  overflow: hidden;
 }
-.header_box .profile_box:hover {
+.header_box .profile__box .profile__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.header_box .profile__box:hover {
   cursor: pointer;
 }
 

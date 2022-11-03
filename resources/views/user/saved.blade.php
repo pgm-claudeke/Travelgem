@@ -6,7 +6,11 @@
     <div class="user">
         <div class="user__info">
             <div class="user__img-box"> 
-
+                    @if($user->user_img)
+                    <img class="user__img" src="{{ asset('storage/user_images/' . $user->user_img) }}" alt="{{$user->user_img}}">
+                    @else
+                    <img class="user__img"  src="{{ asset('storage/user_images/user.jpg') }}" alt="user.jpg">
+                    @endif
             </div>
             <p class="user__name">{{$user->username}}</p>
         </div>

@@ -32,7 +32,12 @@
                 <li><a href="/travel">Travel</a></li>
             </ul>
             <div class="navigation__user">
-                <div class="profile_box">
+                <div class="profile__box">
+                    @if($user->user_img)
+                    <img class="profile__img" src="{{ asset('storage/user_images/' . $user->user_img) }}" alt="{{$user->user_img}}">
+                    @else
+                    <img class="profile__img"  src="{{ asset('storage/user_images/user.jpg') }}" alt="user.jpg">
+                    @endif
                 </div>
                 <div class="user-options user-options--hide">
                     <ul class="user-options__list">

@@ -18,8 +18,14 @@
         .user__img-box {
             width: 4rem;
             aspect-ratio: 1/1;
-            background-color: $color_one;
             border-radius: 50%;
+            overflow: hidden;
+
+            .user__img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
         }
 
         .user__name {

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Save;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -58,6 +60,45 @@ class UserController extends Controller
         $user = Auth::user();
 
         return view('user.settings', [
+            'user' => $user, 
+        ]);
+    } 
+
+    public function editUser(Request $request) {
+        $user = Auth::user();
+
+        $editUser = User::find($user->id);
+
+        if( $request->file('user_img') ) {
+            $uploaded_path = $request->file('user_img')->store('public/user_images');
+            $filename = basename($uploaded_path);
+        };
+
+        $editUser->firstName = $request->input('firstName');
+        $editUser->lastName = $request->input('lastName');
+        $editUser->username = $request->input('username');
+        $editUser->email = $request->input('email');
+        if( isset($filename) ) {
+            $editUser->user_img = $filename;
+        };
+
+        $editUser->save();
+
+        return redirect('/user');
+    }
+
+    public function password() {
+        $user = Auth::user();
+
+        return view('user.password', [
+            'user' => $user, 
+        ]);
+    } 
+
+    public function delete() {
+        $user = Auth::user();
+
+        return view('user.delete', [
             'user' => $user, 
         ]);
     } 
