@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller; 
 use App\Models\Post;
-use App\Models\Tag;
+use App\Models\Tag; 
 use Illuminate\Support\Facades\Auth;
 
 class ExploreController extends Controller
@@ -20,7 +20,6 @@ class ExploreController extends Controller
             $selectedTags = $_GET['tags'];
         }
 
-
         if (count($selectedTags) > 0) {
             $posts = Post::join('post_tag', 'posts.id', '=', 'post_tag.post_id')
             ->join('tags', 'tags.id', '=', 'post_tag.tag_id')
@@ -31,10 +30,6 @@ class ExploreController extends Controller
         } else {
             $posts = Post::inRandomOrder()->get();
         }
-        
-
-
-        //met ajax via een api 
 
         return view('explore.list', [
             'posts' => $posts,

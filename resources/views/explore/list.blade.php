@@ -12,117 +12,23 @@
             @foreach($tags as $tag)
             @if(in_array($tag->name, $selectedTags))
             <div class="filter__tag">
-                <input type="checkbox" value="{{$tag->name}}" name="tags[]" checked>
+                <input class="tag__checkbox" type="checkbox" value="{{$tag->name}}" name="tags[]" checked>
                 <label for="{{$tag->name}}">{{$tag->name}}</label>
             </div>
             @else
             <div class="filter__tag">
-                <input type="checkbox" value="{{$tag->name}}" name="tags[]">
+                <input class="tag__checkbox" type="checkbox" value="{{$tag->name}}" name="tags[]">
                 <label for="{{$tag->name}}">{{$tag->name}}</label>
             </div>
             @endif
             @endforeach 
-            <button class="btn btn--filter" type="submit" for="filter__form"><i class="fa-solid fa-filter"></i></i></button>
         </form>
     </div>
 </section>
 <section class="section">
-    <ul class="list">
+    <ul class="list" id="listExplore">
         @foreach($posts as $post)
-        <li class="card card--post">
-            <a href="/post/{{ $post->id }}">
-                <div class="card__container">
-                    <img class="card__img" src="{{ asset('storage/posts/'. $post->image) }}" alt="{{$post->image}}">
-                </div>
-                <div class="card__info">
-                    <p class="card__title">{{$post->title}}</p>
-                    <div class="card__location">
-                        <i class="fa-solid fa-location-dot icon"></i>
-                        <p>{{$post->country}}, {{$post->city}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
-        @endforeach
-        @foreach($posts as $post)
-        <li class="card card--post">
-            <a href="/post/{{ $post->id }}">
-                <div class="card__container">
-                    <img class="card__img" src="{{ asset('storage/posts/'. $post->image) }}" alt="{{$post->image}}">
-                </div>
-                <div class="card__info">
-                    <p class="card__title">{{$post->title}}</p>
-                    <div class="card__location">
-                        <i class="fa-solid fa-location-dot icon"></i>
-                        <p>{{$post->country}}, {{$post->city}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
-        @endforeach
-        @foreach($posts as $post)
-        <li class="card card--post">
-            <a href="/post/{{ $post->id }}">
-                <div class="card__container">
-                    <img class="card__img" src="{{ asset('storage/posts/'. $post->image) }}" alt="{{$post->image}}">
-                </div>
-                <div class="card__info">
-                    <p class="card__title">{{$post->title}}</p>
-                    <div class="card__location">
-                        <i class="fa-solid fa-location-dot icon"></i>
-                        <p>{{$post->country}}, {{$post->city}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
-        @endforeach
-        @foreach($posts as $post)
-        <li class="card card--post">
-            <a href="/post/{{ $post->id }}">
-                <div class="card__container">
-                    <img class="card__img" src="{{ asset('storage/posts/'. $post->image) }}" alt="{{$post->image}}">
-                </div>
-                <div class="card__info">
-                    <p class="card__title">{{$post->title}}</p>
-                    <div class="card__location">
-                        <i class="fa-solid fa-location-dot icon"></i>
-                        <p>{{$post->country}}, {{$post->city}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
-        @endforeach
-        @foreach($posts as $post)
-        <li class="card card--post">
-            <a href="/post/{{ $post->id }}">
-                <div class="card__container">
-                    <img class="card__img" src="{{ asset('storage/posts/'. $post->image) }}" alt="{{$post->image}}">
-                </div>
-                <div class="card__info">
-                    <p class="card__title">{{$post->title}}</p>
-                    <div class="card__location">
-                        <i class="fa-solid fa-location-dot icon"></i>
-                        <p>{{$post->country}}, {{$post->city}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
-        @endforeach
-        @foreach($posts as $post)
-        <li class="card card--post">
-            <a href="/post/{{ $post->id }}">
-                <div class="card__container">
-                    <img class="card__img" src="{{ asset('storage/posts/'. $post->image) }}" alt="{{$post->image}}">
-                </div>
-                <div class="card__info">
-                    <p class="card__title">{{$post->title}}</p>
-                    <div class="card__location">
-                        <i class="fa-solid fa-location-dot icon"></i>
-                        <p>{{$post->country}}, {{$post->city}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
+        @include('explore.listitem')
         @endforeach
     </ul>
 </section>

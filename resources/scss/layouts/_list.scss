@@ -1,8 +1,13 @@
 .list {
+    columns: 6;
+    column-gap: 0.9rem;
+
+    list-style: none;
+}
+
+.list--travel {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: .9rem;
-    list-style: none;
-    align-items: flex-start;
+    gap: 0.9rem;
 }

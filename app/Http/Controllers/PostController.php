@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    public function index($id) {
+    public function post($id) {
+        //current Uuser
+        $user = Auth::user();
+
         $post = Post::find($id);
 
         $tags = Tag::join('post_tag', 'tags.id', '=', 'post_tag.tag_id')
@@ -23,40 +26,22 @@ class PostController extends Controller
 
         $postUser = User::where('id', $post->user_id)->first();
 
-        $user = Auth::user();
-
         $saved = Save::where('user_id', $user->id)->where('post_id', $id)->first();
 
         $comments = Comment::join('users', 'comments.user_id', '=', 'users.id')
             ->where('post_id', $id)
-            ->get(['comments.*','users.username'])
+            ->get(['comments.*','users.username', 'users.user_img'])
         ;
 
         return view('post.detail', [ 
+            'user' => $user,
             'post_id' => $id,
             'post' => $post,
-            'user' => $user,
             'postUser' => $postUser,
             'comments' => $comments,
             'saved' => $saved,
             'tags' => $tags
-        ]);
-    }
-
-    public function storeComment(Request $request){
-        $user = Auth::user();
-        $userId = $user->id;
-        $postId = $request->input('post_id');
-
-        $comment = new Comment();
-
-        $comment->user_id = $userId;
-        $comment->post_id = $request->input('post_id');
-        $comment->comment = $request->input('comment');
-
-        $comment->save();
-
-        return redirect('/post/' . $postId);
+        ]); 
     }
 
     public function savePost(Request $request){
@@ -74,7 +59,31 @@ class PostController extends Controller
         return redirect('/post/' . $postId);
     }
 
-    public function editPage($id) {
+    public function unsavePost($id) {
+        $user = Auth::user();
+
+        Save::where('user_id', '=', $user->id)->where('post_id', '=', $id)->delete();
+
+        return redirect('/post/' . $id);
+    }
+
+    public function postComment(Request $request){
+        $user = Auth::user();
+        $userId = $user->id;
+        $postId = $request->input('post_id');
+
+        $comment = new Comment();
+
+        $comment->user_id = $userId;
+        $comment->post_id = $request->input('post_id');
+        $comment->comment = $request->input('comment');
+
+        $comment->save();
+
+        return redirect('/post/' . $postId);
+    }
+
+    public function editPostPage($id) {
         $post = Post::find($id);
 
         $postUser = User::where('id', $post->user_id)->first();
@@ -92,7 +101,7 @@ class PostController extends Controller
 
         $comments = Comment::join('users', 'comments.user_id', '=', 'users.id')
             ->where('post_id', $id)
-            ->get(['comments.*','users.username'])
+            ->get(['comments.*','users.username', 'users.user_img'])
         ;
 
         return view('post.edit', [ 
@@ -123,6 +132,9 @@ class PostController extends Controller
 
     public function deletePost($id){
         Post::find($id)->delete();
+        Comment::where('post_id', '=', $id)->delete('*');
+        Save::where('post_id', '=', $id)->delete('*');
+        Tag::join('post_tag', 'tags.id', '=', 'post_tag.tag_id')->where('post_id', '=', $id)->delete('*');
 
         return redirect('/home');
     }

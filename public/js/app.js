@@ -12,10 +12,12 @@
     init: function init() {
       this.cacheElements();
       this.openUserNav();
+      this.getSearchValue();
     },
     cacheElements: function cacheElements() {
       this.$userIcon = document.querySelector('.navigation__user');
       this.$userOptions = document.querySelector('.user-options');
+      this.$list = document.querySelector('.list');
     },
     openUserNav: function openUserNav() {
       var _this = this;
@@ -27,7 +29,8 @@
           _this.$userOptions.classList.add('user-options--hide');
         }
       });
-    }
+    },
+    getSearchValue: function getSearchValue() {}
   };
   app.init();
 })();

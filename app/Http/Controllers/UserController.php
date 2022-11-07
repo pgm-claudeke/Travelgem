@@ -103,4 +103,24 @@ class UserController extends Controller
         ]);
     } 
 
+    public function otherUser($id) {
+        $user = Auth::user();
+
+        $otherUser = User::find($id);
+        
+        $posts = Post::where('user_id', $id) 
+        ->latest()
+        ->get()
+        ;
+
+        $numberOfPosts = Post::where('user_id', $id)->count();
+
+        return view('user.detail', [
+            'user' => $user, 
+            'otherUser' => $otherUser,
+            'posts' => $posts,
+            'numberOfPosts' => $numberOfPosts,
+        ]);
+    }
+
 }

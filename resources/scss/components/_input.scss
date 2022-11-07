@@ -67,3 +67,12 @@ input[type="date"] {
     border: none;
     padding: 0;
 }
+
+.input__tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    margin-top: 1rem;
+}

@@ -9,6 +9,7 @@ use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -29,17 +30,19 @@ Route::get('/', [HomeController::class,'index']);
 
 Route::get('/home', [ExploreController::class, 'index']);
 
-Route::get('post/{id}', [PostController::class, 'index']); 
+Route::get('post/{id}', [PostController::class, 'post']); 
 Route::get('post/{id}/delete-post', [PostController::class, 'deletePost']);
-Route::get('post/{id}/edit', [PostController::class, 'editPage']); 
+Route::get('post/{id}/edit', [PostController::class, 'editPostPage']); 
 Route::post('/edited-post', [PostController::class, 'editPost']); 
-Route::post('/store-comment', [PostController::class, 'storeComment']);
+Route::post('/store-comment', [PostController::class, 'postComment']);
 Route::post('/saved-post', [PostController::class, 'savePost']);
+Route::get('/post/{id}/unsave', [PostController::class, 'unsavePost']);
 
 Route::get('/travel', [TravelController::class, 'index']);
 Route::get('/travel/{country}/{city?}', [TravelController::class, 'country']);
 
 Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/{id}', [UserController::class, 'otherUser']);
 Route::get('/user/saved', [UserController::class, 'saved']);
 Route::get('/user/settings', [UserController::class, 'settings']); 
 Route::post('/user/settings/edit', [UserController::class, 'editUser']); 
@@ -47,6 +50,8 @@ Route::get('/user/password', [UserController::class, 'password']);
 Route::get('/user/delete', [UserController::class, 'delete']); 
 Route::get('/user/add-post', [AddPostController::class, 'index']);
 Route::post('/store-post', [AddPostController::class, 'save']);
+
+Route::get('/search', [SearchController::class, 'index']);
 
 Route::get('/admin', [DataController::class, 'index']);
 Route::get('/admin/{id}/delete', [DataController::class, 'deleteUser']);
@@ -61,4 +66,4 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform');
-});
+}); 

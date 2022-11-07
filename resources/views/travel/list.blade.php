@@ -4,7 +4,7 @@
 
 @section('content')
     <section class="section">
-        <ul class="list">
+        <ul class="list list--travel">
             @foreach($postsFiltered as $post)
             <li class="card card--country">
                 <a href="/travel/{{$post->country}}">

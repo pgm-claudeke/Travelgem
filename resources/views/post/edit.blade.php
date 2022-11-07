@@ -33,7 +33,6 @@
                     <div class="input__tags">
                         @foreach($tags as $tag)
                         <div>
-                            <p>{{$tag->id}}</p>
                             @if($post->tags->contains('id', $tag->id))
                             <input type="checkbox" value="{{$tag->id}}" id="tags" name="tags[]" checked>
                             @else

@@ -33,6 +33,8 @@ body {
   height: fit-content;
   font-weight: 500;
   font-size: 1rem;
+  margin-bottom: 0.9rem;
+  display: inline-block;
 }
 .card--post .card__container {
   width: 100%;
@@ -243,6 +245,14 @@ input[type=date] {
   padding: 0;
 }
 
+.input__tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
 .user {
   width: 100%;
   background-color: white;
@@ -335,6 +345,12 @@ input[type=date] {
   -o-object-position: center;
      object-position: center;
 }
+.post .post__tags {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem 0rem 0.3rem 0rem;
+}
 .post .post__info {
   display: flex;
   flex-direction: column;
@@ -346,6 +362,8 @@ input[type=date] {
   flex-direction: row;
   gap: 0.5rem;
   align-items: center;
+  color: #4D4D4D;
+  text-decoration: none;
 }
 .post .post__info .post__container--info {
   padding: 1.5rem;
@@ -362,7 +380,7 @@ input[type=date] {
   gap: 1rem;
 }
 .post .post__info .post__subtitle {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 .post .post__info .post__title {
@@ -372,6 +390,12 @@ input[type=date] {
 }
 .post .post__info .post__user {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  color: #4D4D4D;
+  text-decoration: none;
 }
 .post .post__info .post__user .post__username {
   font-weight: 900;
@@ -380,12 +404,12 @@ input[type=date] {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 .post .post__info .post__comments .post__comment {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   gap: 0.5rem;
 }
 .post .post__info .post__comments .post__comment .post__user {
@@ -608,6 +632,10 @@ input[type=date] {
      object-position: center;
 }
 
+.user-img--small {
+  width: 2rem;
+}
+
 .login-register {
   height: 100vh;
   display: flex;
@@ -765,7 +793,7 @@ input[type=date] {
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 1rem;
+  gap: 1.5rem;
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -809,7 +837,6 @@ input[type=date] {
 .header_box .profile__box {
   height: 2.5rem;
   aspect-ratio: 1/1;
-  background-color: #23A5D9;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -829,12 +856,18 @@ input[type=date] {
 }
 
 .list {
+  -moz-columns: 6;
+       columns: 6;
+  -moz-column-gap: 0.9rem;
+       column-gap: 0.9rem;
+  list-style: none;
+}
+
+.list--travel {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.9rem;
-  list-style: none;
-  align-items: flex-start;
 }
 
 .content {

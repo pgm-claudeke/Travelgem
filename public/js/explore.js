@@ -8,12 +8,14 @@ var __webpack_exports__ = {};
     init: function init() {
       this.cacheElements();
       this.openFilter();
+      this.getSelectedTags();
     },
     cacheElements: function cacheElements() {
       this.$filTerBtn = document.querySelector('.filter__btn');
       this.$filterForm = document.querySelector('.filter__form');
       this.$filterIconUp = document.querySelector('.filter__icon--up');
       this.$filterIconDown = document.querySelector('.filter__icon--down');
+      this.$checkboxesTags = document.querySelectorAll('.tag__checkbox');
     },
     openFilter: function openFilter() {
       var _this = this;
@@ -33,6 +35,29 @@ var __webpack_exports__ = {};
           _this.$filterIconDown.classList.remove('filter__icon--hide');
         }
       });
+    },
+    getSelectedTags: function getSelectedTags() {
+      var selectedTags = [];
+      this.$checkboxesTags.forEach(function (tag) {
+        tag.addEventListener('change', function () {
+          if (tag.checked) {
+            selectedTags.push(tag.value);
+            console.log(selectedTags);
+          } else {
+            var indexOfTag = selectedTags.indexOf(tag.value);
+            selectedTags.splice(indexOfTag, 1);
+            console.log(selectedTags);
+          }
+
+          fetch('api/home/' + selectedTags.join(',')).then(function (response) {
+            return response.text();
+          }).then(function (html) {
+            console.log(html);
+            document.getElementById('listExplore').innerHTML = html;
+          });
+        });
+      });
+      return selectedTags;
     }
   };
   app.init();
