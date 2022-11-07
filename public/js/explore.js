@@ -42,17 +42,14 @@ var __webpack_exports__ = {};
         tag.addEventListener('change', function () {
           if (tag.checked) {
             selectedTags.push(tag.value);
-            console.log(selectedTags);
           } else {
             var indexOfTag = selectedTags.indexOf(tag.value);
             selectedTags.splice(indexOfTag, 1);
-            console.log(selectedTags);
           }
 
           fetch('api/home/' + selectedTags.join(',')).then(function (response) {
             return response.text();
           }).then(function (html) {
-            console.log(html);
             document.getElementById('listExplore').innerHTML = html;
           });
         });

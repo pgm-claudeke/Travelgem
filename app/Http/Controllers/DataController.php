@@ -10,7 +10,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
- 
+
 class DataController extends Controller
 {
     public function index() {
@@ -32,15 +32,33 @@ class DataController extends Controller
         return redirect('/admin');
     }
 
-    public function posts() {
+    public function posts($search = null) {
         $user = Auth::user();
-        $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
-        ->get(['posts.*', 'users.username'])
-        ->sortBy('id');
+
+        if (empty($_GET)) {
+            $search = ''; 
+        } else {
+            $search = $_GET['search'];
+        }
+
+        if (strlen($search) > 0) {
+            $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
+            ->where('country', 'like', '%' . $search . '%')
+            ->orWhere('city', 'like', '%' . $search . '%')
+            ->orWhere('title', 'like', '%' . $search . '%')
+            ->orWhere('users.username', 'like', '%' . $search . '%')
+            ->get(['posts.*', 'users.username'])
+            ->sortBy('id');
+        } else {
+            $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
+            ->get(['posts.*', 'users.username'])
+            ->sortBy('id');
+        }
 
         return view('admin.posts', [
             'user' => $user,
-            'posts' => $posts
+            'posts' => $posts,
+            'search' => $search,
         ]);
     }
 

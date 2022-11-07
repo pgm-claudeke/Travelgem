@@ -27,22 +27,20 @@
             })
         },
         getSelectedTags () {
-            const selectedTags = [];
+            const selectedTags = []; 
 
             this.$checkboxesTags.forEach(tag => {
                 tag.addEventListener('change', function(){
                     if (tag.checked ) {
                         selectedTags.push(tag.value)
-                        console.log(selectedTags);
                     } else {
                         const indexOfTag = selectedTags.indexOf(tag.value);
                         selectedTags.splice(indexOfTag, 1)
-                        console.log(selectedTags);
                     }
 
                     fetch('api/home/' + selectedTags.join(','))
                     .then((response) => response.text())
-                    .then((html) => {console.log(html); document.getElementById('listExplore').innerHTML = html})
+                    .then((html) => {document.getElementById('listExplore').innerHTML = html})
                     
                 });
             });

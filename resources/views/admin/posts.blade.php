@@ -14,47 +14,35 @@
     <div class="container container--side-nav container--data">
         <p class="container__title">Posts</p>
         <div class="">
-            <form action="" class="search-form">
-                <input type="text" class="input input--search" placeholder="Search post">
+            <form action="" method="GET" class="search-form">
+                <input type="text" class="input input--search" placeholder="Search post" id="searchPostAdmin" name="search">
                 <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
         <div class="table">
-            <div>
-                <ul class="table__row table__row--labels">
-                    <li class="table__info table__info--short">id</li>
-                    <li class="table__info table__info--mid-long">image</li>
-                    <li class="table__info table__info--medium">country</li>
-                    <li class="table__info table__info--medium">city</li>
-                    <li class="table__info table__info--mid-long">title</li>
-                    <li class="table__info table__info--extra-long">description</li>
-                    <li class="table__info table__info--medium">user</li>
-                    <li class="table__info table__info--short"></li>
-                    <li class="table__info table__info--short"></li>
-                </ul>
+            <div class="table__row table__row--labels">
+                <div class="table__info table__info--short">id</div>
+                <div class="table__info table__info--mid-long">image</div>
+                <div class="table__info table__info--medium">country</div>
+                <div class="table__info table__info--medium">city</div>
+                <div class="table__info table__info--mid-long">title</div>
+                <div class="table__info table__info--extra-long">description</div>
+                <div class="table__info table__info--medium">user</div>
+                <div class="table__info table__info--short"></div>
+                <div class="table__info table__info--short"></div>
             </div>
             <div>
-                @foreach($posts as $post)
-                <ul class="table__row">
-                    <li class="table__info table__info--short">{{$post->id}}</li>
-                    <li class="table__info table__info--mid-long">
-                    <img class="table__img" src="{{ asset('storage/posts/' . $post->image) }}" alt="{{$post->image}}">
-                    </li>
-                    <li class="table__info table__info--medium">{{$post->country}}</li>
-                    <li class="table__info table__info--medium">{{$post->city}}</li>
-                    <li class="table__info table__info--mid-long">{{$post->title}}</li>
-                    <li class="table__info table__info--extra-long">{{substr($post->description, 0, 30)}}...</li>
-                    <li class="table__info table__info--medium">{{$post->username}}</li>
-                    <li class="table__info table__info--short"><a href="/post/{{ $post->id }}" class="table__btn table__btn--link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                    <li class="table__info table__info--short">
-                        <form action="{{url('/admin/posts/'. $post->id . '/delete')}}" method="get">
-                            <button class="table__btn table__btn--delete"><i class="fa-solid fa-trash-can"></i></button>
-                        </form>
-                    </li>
+                <ul id="listPostsAdmin">
+                    @foreach($posts as $post)
+                    @include('admin.post')
+                    @endforeach
                 </ul>
-                @endforeach
             </div>
         </div>
     </div>
 </section>
 @endsection 
+
+@section('script') 
+<script src="{{ asset('js/adminPosts.js') }}"></script>
+@endsection

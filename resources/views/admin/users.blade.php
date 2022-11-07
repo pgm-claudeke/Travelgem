@@ -21,34 +21,23 @@
         </div>
         <div class="table">
             <div>
-                <ul class="table__row table__row--labels">
-                    <li class="table__info table__info--short">id</li>
-                    <li class="table__info table__info--mid-long">username</li>
-                    <li class="table__info table__info--long">First name</li>
-                    <li class="table__info table__info--long">Last name</li>
-                    <li class="table__info table__info--long">email</li>
-                    <li class="table__info table__info--medium">birthday</li>
-                    <li class="table__info table__info--short"> </li>
-                    <li class="table__info table__info--short"> </li>
-                </ul>
+                <div class="table__row table__row--labels">
+                    <p class="table__info table__info--short">id</p>
+                    <p class="table__info table__info--mid-long">username</p>
+                    <p class="table__info table__info--long">First name</p>
+                    <p class="table__info table__info--long">Last name</p>
+                    <p class="table__info table__info--long">email</p>
+                    <p class="table__info table__info--medium">birthday</p>
+                    <p class="table__info table__info--short"> </p>
+                    <p class="table__info table__info--short"> </p>
+                </div>
             </div>
             <div>
-                @foreach($users as $userData)
-                <ul class="table__row">
-                    <li class="table__info table__info--short">{{$userData->id}}</li>
-                    <li class="table__info table__info--mid-long">{{$userData->username}}</li>
-                    <li class="table__info table__info--long">{{$userData->firstName}}</li>
-                    <li class="table__info table__info--long">{{$userData->lastName}}</li>
-                    <li class="table__info table__info--long">{{$userData->email}}</li>
-                    <li class="table__info table__info--medium">{{$userData->birthday}}</li>
-                    <li class="table__info table__info--short"><a href="" class="table__btn table__btn--link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                    <li class="table__info table__info--short">
-                        <form action="{{url('/admin/'. $userData->id .'/delete')}}" method="GET">
-                            <button class="table__btn table__btn--delete"><i class="fa-solid fa-trash-can"></i></button>
-                        </form>
-                    </li>
+                <ul>
+                    @foreach($users as $userData)
+                    @include('admin.user')
+                    @endforeach
                 </ul>
-                @endforeach
             </div>
         </div>
     </div>

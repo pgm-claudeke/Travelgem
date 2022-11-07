@@ -4,6 +4,8 @@
     "/js/explore.js": "/js/explore.js",
     "/js/country.js": "/js/country.js",
     "/js/post.js": "/js/post.js",
+    "/js/adminUsers.js": "/js/adminUsers.js",
+    "/js/adminPosts.js": "/js/adminPosts.js",
     "/css/main.css": "/css/main.css",
     "/css/app.min.css": "/css/app.min.css",
     "/webfonts/fa-brands-400.ttf": "/webfonts/fa-brands-400.ttf",
