@@ -14,7 +14,7 @@
 
                 fetch('api/admin/posts/' + search_string)
                 .then((response) => response.text())
-                .then((data) => {document.getElementById('listPostsAdmin').innerHTML = data; console.log(data)})
+                .then((data) => {console.log(data);document.getElementById('listPostsAdmin').innerHTML = data})
             });
         }
     }

@@ -22,23 +22,10 @@
     </div>
 </section>
 
-<section>
+<section class="section">
     <ul class="list">
-            @foreach($saves as $saved) 
-            <li class="card card--post">
-                <a href="/post/{{ $saved->id }}">
-                    <div class="card__container">
-                        <img class="card__img" src="{{ asset('storage/posts/' . $saved->image) }}" alt="{{$saved->image}}g">
-                    </div>
-                    <div class="card__info">
-                        <p class="card__title">{{$saved->title}}</p>
-                        <div class="card__location">
-                            <i class="fa-solid fa-location-dot icon"></i>
-                            <p>{{$saved->country}}, {{$saved->city}}</p>
-                        </div>
-                    </div> 
-                </a> 
-            </li>
+            @foreach($saves as $post) 
+            @include('user.list')
             @endforeach
         </ul>
 </section>

@@ -11,7 +11,10 @@
 </head>
 
 <body>
+<div class="content content--auth">
     @yield('content')
+</div>
+    @yield('script')
 </body>
 
 </html>

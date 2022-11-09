@@ -15,39 +15,59 @@
  
 <body>
     @section('header')
-    <header class="header_box">
-        <div class="logo_box"> 
-            <a href="/home">
-            <img class="header__logo" src="{{ asset('storage/logo/travelgem_logo.svg') }}" alt="travelgem_logo.svg">
-            </a>
-        </div>
-        <div class="search_box">
-            <form action="" method="get">
-                <input type="text" class="input input--search" placeholder="search">
-            </form>
-        </div>
-        <div class="navigation_box">
-            <ul class="navigation">
-                <li><a href="/home">Explore</a></li>
-                <li><a href="/travel">Travel</a></li>
-            </ul>
-            <div class="navigation__user">
-                <div class="profile__box">
-                    @if($user->user_img)
-                    <img class="profile__img" src="{{ asset('storage/user_images/' . $user->user_img) }}" alt="{{$user->user_img}}">
-                    @else
-                    <img class="profile__img"  src="{{ asset('storage/user_images/user.jpg') }}" alt="user.jpg">
-                    @endif
-                </div>
-                <div class="user-options user-options--hide">
-                    <ul class="user-options__list">
-                        <li><a href="/user"><i class="fa-solid fa-circle-user"></i> Profile</a></li>
-                        <li><a href="/user/settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                        @if($user->role_id === "2")
-                        <li><a href="/admin"><i class="fa-solid fa-database"></i> Database</a></li>
+    <header class="header">
+        <div class="header__container"> 
+            <a href="/home"><img class="logo logo--header" src="{{ asset('storage/logo/travelgem_logo.svg') }}" alt="travelgem_logo.svg"></a>
+            <div class="header__search">
+                <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data">
+                    @csrf
+                    <input type="text" class="input input--search" placeholder="search" name="search">
+                </form>
+            </div>
+            <div class="header__navigation-box">
+                <ul class="header__navigation">
+                    <li>
+                        <a href="/search">
+                            <div class="header__link header__link--icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/home">
+                            <p class="header__link header__link--text" data-nav="home">Explore</p>
+                            <div class="header__link header__link--icon">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/travel">
+                            <p class="header__link header__link--text" data-nav="travel">Travel</p>
+                            <div class="header__link header__link--icon">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="header__user">
+                    <div class="user-img user-img--header">
+                        @if($user->user_img)
+                        <img class="user-img__img" src="{{ asset('storage/user_images/' . $user->user_img) }}" alt="{{$user->user_img}}">
+                        @else
+                        <img class="user-img__img"  src="{{ asset('storage/user_images/user.jpg') }}" alt="user.jpg">
                         @endif
-                        <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
-                    </ul>
+                    </div>
+                    <div class="user-options user-options--hide">
+                        <ul class="user-options__list">
+                            <li><a href="/user"><i class="fa-solid fa-circle-user"></i> Profile</a></li>
+                            <li><a href="/user/settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                            @if($user->role_id === "2")
+                            <li><a href="/admin"><i class="fa-solid fa-database"></i> Database</a></li>
+                            @endif
+                            <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
     background-color: $color_one;
     border: none;
     border-radius: $radius;
-    padding: 0rem 1.4rem;
+    padding: 0.5rem 1.4rem;
 
     font-size: $text;
     color: $color_two;
@@ -17,6 +17,14 @@
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0.2rem 0.5rem;
+    }
+
+    @media screen and (min-width:480px) and  (max-width: 758px) {
+        padding: 0.4rem 1rem;
     }
 }
 
@@ -55,13 +63,14 @@
     color: $color-two;
     font-size: 1rem;
 
-    padding: 0.5rem 1rem;
     border: none;
 
     display: flex;
     flex-direction: row;
     gap: 0.8rem;
     align-items: center;
+
+    border-radius: $radius-smaller;
 }
 
 .btn--red {

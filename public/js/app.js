@@ -13,11 +13,14 @@
       this.cacheElements();
       this.openUserNav();
       this.getSearchValue();
+      this.getSelectedNav();
     },
     cacheElements: function cacheElements() {
-      this.$userIcon = document.querySelector('.navigation__user');
+      this.$userIcon = document.querySelector('.user-img--header');
       this.$userOptions = document.querySelector('.user-options');
       this.$list = document.querySelector('.list');
+      this.$navigations = document.querySelectorAll('.header__link--text');
+      this.$userHeader = document.querySelector('.user-img--header');
     },
     openUserNav: function openUserNav() {
       var _this = this;
@@ -30,7 +33,23 @@
         }
       });
     },
-    getSearchValue: function getSearchValue() {}
+    getSearchValue: function getSearchValue() {},
+    getSelectedNav: function getSelectedNav() {
+      var location = window.location.href;
+      this.$navigations.forEach(function (nav) {
+        if (location.includes(nav.dataset.nav)) {
+          nav.classList.add('header__link--selected');
+        } else {
+          nav.classList.remove('header__link--selected');
+        }
+      });
+
+      if (location.includes('user')) {
+        this.$userHeader.classList.add('user-img--selected');
+      } else {
+        this.$userHeader.classList.remove('user-img--selected');
+      }
+    }
   };
   app.init();
 })();

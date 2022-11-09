@@ -53,7 +53,7 @@
             <div class="post__container post__container--info">
                 <p class="post__title">{{$post->title}}</p>
                 <p class="post__description">{{$post->description}}</p>
-                <a href="/user/{{$postUser->id}}" class="post__user">
+                <a href="/users/{{$postUser->id}}" class="post__user">
                     <div class="user-img user-img--small">
                         @if($postUser->user_img)
                         <img class="user-img__img" src="{{ asset('storage/user_images/' . $postUser->user_img) }}"
@@ -71,7 +71,7 @@
                     <ul class="post__comments">
                         @foreach($comments as $comment)
                         <li class="post__comment">
-                            <a href="/user/{{$postUser->id}}" class="post__user">
+                            <a href="/users/{{$postUser->id}}" class="post__user">
                                 <div class="user-img user-img--small">
                                     @if($comment->user_img)
                                     <img class="user-img__img"

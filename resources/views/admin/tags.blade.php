@@ -3,7 +3,7 @@
 @section('title', 'tags')
 
 @section('content')
-<section class="section section--row">
+<section class="section section--row section--admin">
     <div class="side-nav">
         <ul class="side-nav__list">
             <li><a class="side-nav__nav" href="/admin"><i class="fa-solid fa-users"></i> Users</a></li>

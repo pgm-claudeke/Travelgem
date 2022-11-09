@@ -9,16 +9,31 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0rem;
+    }
+
+    @media screen and (min-width: 769px) and  (max-width: 1040px) {
+
+    }
+
     .user__info {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
         align-items: center;
 
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+
         .user__img-box {
             width: 4rem;
             aspect-ratio: 1/1;
-            border-radius: 50%;
+            border-radius: 50%; 
             overflow: hidden;
 
             .user__img {
@@ -39,7 +54,6 @@
         flex-direction: row;
         gap: 1rem;
 
-
         .user__activity {
             border: none;
             background: transparent;
@@ -48,6 +62,14 @@
             font-weight: $medium;
             color: $color_tree;
             text-decoration: none;
+
+            padding-right: 1rem;
+            border-right: solid $color_base 2px;
+
+            &:last-child {
+                padding-right: 0;
+                border-right: none;
+            }
 
             &:hover {
                 cursor: pointer;
@@ -62,5 +84,26 @@
             text-decoration: none;
             color: $color_tree;
         }
+    }
+}
+
+.user--small {
+    text-decoration: none;
+    color: $color_tree;
+
+    background-color: $color_two;
+    aspect-ratio: 1/1;
+    width: 8rem;
+    padding: 1rem;
+    border-radius: $radius;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .user__username {
+        font-weight: $bold;
     }
 }

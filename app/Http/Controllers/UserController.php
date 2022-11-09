@@ -23,7 +23,7 @@ class UserController extends Controller
         $numberOfPosts = Post::where('user_id', $userId)->count();
         $numberOfSaves = Save::where('saves.user_id', $userId)->join('posts', 'saves.post_id', '=', 'posts.id')->count();
 
-        return view('user.list', [
+        return view('user.detail', [
             'user' => $user,
             'posts' => $posts,
             'numberOfPosts' => $numberOfPosts,
@@ -115,7 +115,7 @@ class UserController extends Controller
 
         $numberOfPosts = Post::where('user_id', $id)->count();
 
-        return view('user.detail', [
+        return view('user.other', [
             'user' => $user, 
             'otherUser' => $otherUser,
             'posts' => $posts,

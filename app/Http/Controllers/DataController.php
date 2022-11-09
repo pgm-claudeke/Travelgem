@@ -13,10 +13,25 @@ use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
-    public function index() {
+    public function index($search = null) {
         $user = Auth::user();
-        $users = User::all()->sortBy('id');
 
+        if (empty($_GET)) {
+            $search = ''; 
+        } else {
+            $search = $_GET['search'];
+        }
+
+        if (strlen($search) > 0) {
+            $users = User::where('username', 'like', '%' . $search . '%')
+            ->orWhere('firstName', 'like', '%' . $search . '%')
+            ->orWhere('lastName', 'like', '%' . $search . '%')
+            ->get('*')
+            ->sortBy('id');
+        } else {
+            $users = User::all()->sortBy('id');
+        }
+        
         return view('admin.users', [
             'user' => $user,
             'users' => $users        

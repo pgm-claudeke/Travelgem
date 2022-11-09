@@ -1,56 +1,54 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="login-register">
-    <div class="logo-box">
-        <img class="logo-box__logo" src="{{ asset('storage/logo/travelgem_logo_white.svg') }}" alt="">
-        <div class="logo-box__img-box">
-            <img class="logo-box__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
+<section class="section section--auth">
+    <div class="preview">
+        <img class="preview__logo" src="{{ asset('storage/logo/travelgem_logo_white.svg') }}" alt="">
+        <div class="preview__img-box">
+            <img class="preview__img" src="{{ asset('storage/images/fabio-comparelli-uq2E2V4LhCY-unsplash.jpg') }}" alt="fabio-comparelli-uq2E2V4LhCY-unsplash.jpg">
         </div>
     </div>
-    <div class="form-box">
-        <div class="form-box__title-box">
-            <h3 class="form-box__title">Create an account</h3>
-            <p class="form-box__description">Let's travel together.</p>
+    <div class="container container--form container--auth">
+        <div>
+            <h3 class="container__title container__title--center">Create an account</h3>
+            <p class="container__description container__description--center">Let's travel together.</p> 
         </div>
-        <div class="form-box__container">
-            <form action="{{ route('register') }}" method="POST" class="form-box__form">
+        <div class="form--auth form--login">
+            <form action="{{ route('register') }}" method="POST" class="form form--auth">
                 @csrf
-
-                <div class="form-box__errors">
+                <div class="form__errors">
                     @error('name')
-                    <div class="form-box__error">
+                    <div class="form__error">
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
                     @error('lastname')
-                    <div class="form-box__error">
+                    <div class="form__error">
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
                     @error('email')
-                    <div class="form-box__error">
+                    <div class="form__error">
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
                     @error('birthday')
-                    <div class="form-box__error">
+                    <div class="form__error">
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
                     @error('username')
-                    <div class="form-box__error">
+                    <div class="form__error">
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
                     @error('password')
-                    <div class="form-box__error">
+                    <div class="form__error">
                         <strong>{{ $message }}</strong>
                     </div>
                     @enderror
                 </div>
-
-                <div class="input__row">
+                <div class="form__row">
                     <input id="firstname" type="text" placeholder="Name" name="firstname" class="input input--medium" value="{{ old('name') }}">
                     <input id="lastname" type="text" placeholder="Lastname" name="lastname" class="input input--medium" value="{{ old('lastname') }}">
                 </div>
@@ -65,11 +63,11 @@
                 <button class="btn btn--large" type="submit">Sign up</button>
             </form>
         </div>
-        <div class="form-box__register">
-            <p class="form-box__description">already have an account?</p>
+        <div class="form--auth">
+            <p class="form__description">already have an account?</p>
             <a href="/login" class="btn btn--large btn--reversed">Login</a>
         </div>
     </div>
-</div>
+</section>
     
 @endsection

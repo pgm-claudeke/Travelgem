@@ -5,9 +5,15 @@
 @section('content')
 <section class="section section--country">
     <p class="section__title">{{$country}}</p>
-    <p class="section__subtitle">{{$city}}</p>
     <div class="filter filter--drop-down">
-        <button class="btn btn--select btn--filter select-city">Select city <i class="fa-solid fa-chevron-down"></i></button>
+        <button class="btn btn--select select-city">
+        @if ($city)
+            {{$city}}
+        @else
+            Select city
+        @endif    
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
         <div class="filter__drop-down filter__drop-down--hide">
             <ul class="filter__list">
                 <li class="filter__option"><a class="filter__option-link" href="/travel/{{$country}}">All</a></li>

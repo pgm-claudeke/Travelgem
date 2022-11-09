@@ -1,27 +1,51 @@
 .section {
     display: flex;
     justify-content: center;
-    width: 100%;
+
+    width: 90%; 
+    max-width: 94.8rem;
 
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 1040px) {
+        margin-bottom: 1.5rem;
+    }
 
     .section__title {
         color: $color_tree;
         font-size: 4rem;
         font-weight: $bold;
         text-transform: uppercase;
+        text-align: center;
+
+        @media screen and (max-width: 480px) {
+            font-size: 2rem;
+        }
+    
+        @media screen and (min-width: 480px) and  (max-width: 1040px) {
+            font-size: 3rem;
+        }
+
     }
 
     .section__subtitle {
         color: $color_one;
         font-size: 2rem;
         font-weight: $bold;
+
+        @media screen and (max-width: 1040px) {
+            font-size: 1.5rem;
+        }
     }
 }
 
 .section--post{
     width: 80%;
     margin-bottom: 0;
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+    }
 }
 
 .section--country {
@@ -38,4 +62,39 @@
 .section--row {
     flex-direction: row;
     gap: 1rem;
+}
+
+.section--auth {
+    align-items: center;
+    gap: 2rem;
+} 
+
+.section--warning {
+    display: none;
+
+    @media screen and (max-width: 1040px) {
+        display: block;
+    }
+}
+
+.section--admin-users {
+    @media screen and (max-width: 1040px) {
+        display: none;
+    }
+}
+
+.section--admin {
+    @media screen and (min-width: 1040px) and (max-width: 1400px) {
+        flex-direction: column;
+    }
+}
+
+.section--search {
+    justify-content: flex-start;
+}
+
+.section--results {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2rem;
 }

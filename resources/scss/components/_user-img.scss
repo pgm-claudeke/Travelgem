@@ -8,9 +8,29 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
-    }
+    } 
 }
 
 .user-img--small {
     width: 2rem;
+}
+
+.user-img--header {
+    width: 2.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 1.8rem;
+    }
+
+    @media screen and (min-width:769px) and  (max-width: 1279px) {
+        width: 2rem;
+    }
+}
+
+.user-img--selected {
+    border: 0.2rem solid $color_one;
 }

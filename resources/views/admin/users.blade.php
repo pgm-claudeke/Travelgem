@@ -3,7 +3,10 @@
 @section('title', 'users')
 
 @section('content')
-<section class="section section--row">
+<section class="section section--warning">
+    <p>Only available on desktop.</p>
+</section>
+<section class="section section--row section--admin section--admin-users">
     <div class="side-nav">
         <ul class="side-nav__list">
             <li><a class="side-nav__nav" href="/admin"><i class="fa-solid fa-users"></i> Users</a></li>
@@ -14,8 +17,8 @@
     <div class="container container--side-nav container--data">
         <p class="container__title">Users</p>
         <div class="">
-            <form action="" class="search-form">
-                <input type="text" class="input input--search" placeholder="Search user">
+            <form action="" method="GET" class="search-form">
+                <input type="text" class="input input--search" placeholder="Search user" name="search">
                 <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>

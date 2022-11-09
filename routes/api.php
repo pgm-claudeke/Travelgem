@@ -42,13 +42,13 @@ Route::get('/home/{selectedTags?}', function ($selectedTags = null) {
 
 });
 
-Route::get('/admin/posts/{searchedUser?}', function ($searchedUser = null) {
-    if (strlen($searchedUser) > 0) {
+Route::get('/admin/posts/{searchedPost?}', function ($searchedPost = null) {
+    if (strlen($searchedPost) > 0) {
         $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
-        ->where('country', 'like', '%' . $searchedUser . '%')
-        ->orWhere('city', 'like', '%' . $searchedUser . '%')
-        ->orWhere('title', 'like', '%' . $searchedUser . '%')
-        ->orWhere('users.username', 'like', '%' . $searchedUser . '%')
+        ->where('country', 'like', '%' . $searchedPost . '%')
+        ->orWhere('city', 'like', '%' . $searchedPost . '%')
+        ->orWhere('title', 'like', '%' . $searchedPost . '%')
+        ->orWhere('users.username', 'like', '%' . $searchedPost . '%')
         ->get(['posts.*', 'users.username'])
         ->sortBy('id');
     } else {
@@ -64,6 +64,6 @@ Route::get('/admin/posts/{searchedUser?}', function ($searchedUser = null) {
     }
 });
 
-Route::get('/admin/posts/{searchedPost?}', function ($searchedPost = null) {
+Route::get('/admin/users/{searchedUser?}', function ($searchedUser = null) {
 
 });

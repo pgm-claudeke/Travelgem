@@ -28,7 +28,7 @@
 <section class="section">
     <ul class="list" id="listExplore">
         @foreach($posts as $post)
-        @include('explore.card')
+            @include('explore.card')
         @endforeach
     </ul>
 </section>

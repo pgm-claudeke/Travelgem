@@ -21,8 +21,8 @@ var __webpack_exports__ = {};
         fetch('api/admin/posts/' + search_string).then(function (response) {
           return response.text();
         }).then(function (data) {
-          document.getElementById('listPostsAdmin').innerHTML = data;
           console.log(data);
+          document.getElementById('listPostsAdmin').innerHTML = data;
         });
       });
     }

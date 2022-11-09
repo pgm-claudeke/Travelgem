@@ -1,8 +1,21 @@
 .content {
-    margin: 2rem 6rem;
-
+    margin: 2rem 0rem;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 480px) {
+        margin: 0.8rem 0rem;
+    }
+
+    @media screen and (min-width:480px) and  (max-width: 758px) {
+        margin: 1rem 0rem;
+    }
+}
+
+.content--auth {
+    height: 100vh;
+    margin: 0rem;
 }

@@ -9,12 +9,27 @@
 }
 
 .card--post {
-    width: 14.9rem;
+    width: 100%;
     height: fit-content;
     font-weight: $medium;
     font-size: $text;
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
     display: inline-block;
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    @media screen and (min-width: 480px) and  (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    @media screen and (min-width: 769px) and  (max-width: 1040px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 
     .card__container {
         width: 100%;
@@ -51,9 +66,24 @@
 }
 
 .card--country {
-    width: 22rem;
+    width: 100%;
     aspect-ratio: 3/2;
     position: relative;
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    @media screen and (min-width: 480px) and  (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    @media screen and (min-width: 769px) and  (max-width: 1040px) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 
     .card__container {
         width: 100%;
