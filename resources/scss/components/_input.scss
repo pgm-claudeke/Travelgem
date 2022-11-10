@@ -1,8 +1,8 @@
 .input {
+    height: $height_inp_btn;
+    padding: 0rem 0.8rem;
     border: solid 1px $color_tree_lighter;
     border-radius: .4rem;
-    padding: 0rem 0.6rem;
-    height: $height_inp_btn;
 
     font-size: 0.9rem;
 }
@@ -15,18 +15,9 @@
     width: 49%;
 }
 
-.input--search {
-    width: 100%;
-}
-
 .input--text {
     height: 5rem;
     padding: 0.4rem 0.8rem;
-}
-
-.input--comment {
-    height: 2.5rem;
-    padding: 0.7rem 0.8rem;
 }
 
 .input__row {

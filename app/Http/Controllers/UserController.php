@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\Save;
 use App\Models\User;
@@ -101,6 +102,15 @@ class UserController extends Controller
         return view('user.delete', [
             'user' => $user, 
         ]);
+    } 
+
+    public function deleteUser($id) {
+        User::find($id)->delete();
+        Post::where('user_id','=', $id)->delete();
+        Comment::where('user_id', '=', $id)->delete('*');
+        Save::where('user_id', '=', $id)->delete('*');
+
+        return redirect('/login');
     } 
 
     public function otherUser($id) {

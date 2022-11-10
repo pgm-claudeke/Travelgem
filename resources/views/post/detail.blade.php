@@ -29,9 +29,9 @@
                 </a>
                 @if ($post->user_id === $user->id)
                 <div class="post__edit">
-                    <a class="btn btn--save" href="{{$post->id}}/edit">Edit</a>
+                    <a class="btn" href="{{$post->id}}/edit">Edit</a>
                     <form action="{{url('post/' . $post->id . '/delete-post')}}" method="GET">
-                        <button class="btn btn--save" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="btn" type="submit"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                 </div>
                 @else
@@ -94,9 +94,9 @@
                 <form action="{{url('/store-comment')}}" method="POST" class="post__new-comment">
                     @csrf
                     <input type="text" name="comment" id="commend" cols="30" rows="10"
-                        class="input input--large input--comment">
+                        class="input input--large">
                     <input type="hidden" value="{{$post->id}}" name="post_id">
-                    <button type="submit" class="btn btn--comment"><i class="fa-solid fa-paper-plane"></i></button>
+                    <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>

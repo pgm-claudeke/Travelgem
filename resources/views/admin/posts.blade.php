@@ -16,11 +16,21 @@
         <p class="container__title">Posts</p>
         <div class="">
             <form action="" method="GET" class="search-form">
-                <input type="text" class="input input--search" placeholder="Search post" id="searchPostAdmin" name="search">
+                <input type="text" class="input input--large" placeholder="Search post" id="searchPostAdmin" name="search">
                 <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
         <div class="table">
+            <div class="table__amounts">
+                <div class="table__amount">
+                    <p>Posts:</p>
+                    <p class="table__amount--bold">{{count($posts)}}</p>
+                </div>
+                <div class="table__amount">
+                    <p>This month:</p>
+                    <p class="table__amount--bold">{{$postsThisMonth}}</p>
+                </div>
+            </div>
             <div class="table__row table__row--labels">
                 <div class="table__info table__info--short">id</div>
                 <div class="table__info table__info--mid-long">image</div>

@@ -17,8 +17,7 @@ var __webpack_exports__ = {};
 
       this.$searchInput.addEventListener('keyup', function (e) {
         var search_string = _this.$searchInput.value;
-        console.log(search_string);
-        fetch('api/admin/posts/' + search_string).then(function (response) {
+        fetch('/api/admin/posts/' + search_string).then(function (response) {
           return response.text();
         }).then(function (data) {
           console.log(data);

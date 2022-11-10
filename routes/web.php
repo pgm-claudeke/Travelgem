@@ -47,6 +47,7 @@ Route::get('/user/settings', [UserController::class, 'settings']);
 Route::post('/user/settings/edit', [UserController::class, 'editUser']); 
 Route::get('/user/password', [UserController::class, 'password']); 
 Route::get('/user/delete', [UserController::class, 'delete']); 
+Route::get('/user/{id}/delete', [UserController::class, 'deleteUser']); 
 Route::get('/user/add-post', [AddPostController::class, 'index']);
 Route::post('/store-post', [AddPostController::class, 'save']);
 

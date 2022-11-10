@@ -21,7 +21,7 @@
             <div class="header__search">
                 <form action="{{url('/search')}}" method="GET" enctype="multipart/form-data">
                     @csrf
-                    <input type="text" class="input input--search" placeholder="search" name="search">
+                    <input type="text" class="input input--large" placeholder="search" name="search">
                 </form>
             </div>
             <div class="header__navigation-box">

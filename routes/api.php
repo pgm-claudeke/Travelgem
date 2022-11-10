@@ -2,8 +2,9 @@
 
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
 
 /*
 |--------------------------------------------------------------------------
@@ -62,8 +63,26 @@ Route::get('/admin/posts/{searchedPost?}', function ($searchedPost = null) {
     foreach($posts as $post) {
         $content .= view('admin.post', ['post' => $post])->render();
     }
+
+    return $content;
 });
 
-Route::get('/admin/users/{searchedUser?}', function ($searchedUser = null) {
+Route::get('/admin/{searchedUser?}', function ($searchedUser = null) {
+    if (strlen($searchedUser) > 0) {
+        $users = User::where('username', 'like', '%' . $searchedUser . '%')
+        ->orWhere('firstName', 'like', '%' . $searchedUser . '%')
+        ->orWhere('lastName', 'like', '%' . $searchedUser . '%')
+        ->get('*')
+        ->sortBy('id');
+    } else {
+        $users = User::all()->sortBy('id');
+    }
 
+    $content = '';
+
+    foreach($users as $user) {
+        $content .= view('admin.user', ['userData' => $user])->render();
+    }
+
+    return $content;
 });

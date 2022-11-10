@@ -7,7 +7,7 @@
 @section('content') 
 <section class="section section--column"> 
     <div class="filter">
-        <button class="btn btn--select filter__btn">Filter <i class="fa-solid fa-chevron-down filter__icon--down"></i> <i class="fa-solid fa-chevron-up filter__icon--up filter__icon--hide"></i></button>
+        <button class="btn btn--filter filter__btn">Filter <i class="fa-solid fa-chevron-down filter__icon--down btn__chevron"></i> <i class="fa-solid fa-chevron-up filter__icon--up filter__icon--hide"></i></button>
         <form action="" class="filter__form filter__form--hide" method="GET" id="filter__form">
             @foreach($tags as $tag)
             @if(in_array($tag->name, $selectedTags))

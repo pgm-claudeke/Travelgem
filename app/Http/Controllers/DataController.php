@@ -9,8 +9,8 @@ use App\Models\Save;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Auth; 
+ 
 class DataController extends Controller
 {
     public function index($search = null) {
@@ -31,10 +31,18 @@ class DataController extends Controller
         } else {
             $users = User::all()->sortBy('id');
         }
+
+        $currentYear = date("Y");
+        $currentMonth = date("m");
+
+        $usersThisMonth = User::whereYear('created_at', $currentYear)
+        ->whereMonth('created_at', $currentMonth)
+        ->count('*');
         
         return view('admin.users', [
             'user' => $user,
-            'users' => $users        
+            'users' => $users,
+            'usersThisMonth' => $usersThisMonth        
         ]);
     }
 
@@ -70,10 +78,19 @@ class DataController extends Controller
             ->sortBy('id');
         }
 
+
+        $currentYear = date("Y");
+        $currentMonth = date("m");
+
+        $postsThisMonth = Post::whereYear('created_at', $currentYear)
+        ->whereMonth('created_at', $currentMonth)
+        ->count('*');
+
         return view('admin.posts', [
             'user' => $user,
             'posts' => $posts,
             'search' => $search,
+            'postsThisMonth' => $postsThisMonth
         ]);
     }
 

@@ -1,4 +1,29 @@
 .table {
+    .table__amounts {
+        font-weight: $regular;
+        color: $color_one;
+        margin-bottom: 1rem;
+
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        .table__amount {
+            padding: 0.5rem 0.8rem;
+
+            border: $color_one solid 0.15rem;
+            border-radius: $radius;
+
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+
+        .table__amount--bold {
+            font-weight: $bold;
+        }
+    }
+
     .table__row {
         display: flex;
         flex-direction: row;

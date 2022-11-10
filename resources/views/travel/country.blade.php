@@ -6,7 +6,7 @@
 <section class="section section--country">
     <p class="section__title">{{$country}}</p>
     <div class="filter filter--drop-down">
-        <button class="btn btn--select select-city">
+        <button class="btn btn--filter select-city">
         @if ($city)
             {{$city}}
         @else

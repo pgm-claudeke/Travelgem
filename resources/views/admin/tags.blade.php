@@ -16,11 +16,17 @@
         <div class="">
             <form action="{{url('/admin/tags/added')}}" method="POST" class="search-form" enctype="multipart/form-data">
                 @csrf
-                <input type="text" class="input input--search" name="name" placeholder="New tag">
+                <input type="text" class="input input--large" name="name" placeholder="New tag">
                 <button type="submit" class="btn"><i class="fa-solid fa-plus"></i></button>
             </form>
         </div>
         <div class="table">
+            <div class="table__amounts">
+            <div class="table__amount">
+                    <p>Tags:</p>
+                    <p class="table__amount--bold">{{count($tags)}}</p>
+                </div>
+            </div>
             <div>
                 <ul class="table__row table__row--labels">
                     <li class="table__info table__info--short">id</li>
