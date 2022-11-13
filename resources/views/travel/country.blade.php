@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Country')
+@section('title', 'country')
 
 @section('content')
 <section class="section section--country">

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
+@section('title', 'posts')
 
+@section('content')
 <section class="section">
     <div class="user">
         <div class="user__info">
@@ -29,5 +30,4 @@
             @endforeach
         </ul>
 </section>
-
 @endsection 

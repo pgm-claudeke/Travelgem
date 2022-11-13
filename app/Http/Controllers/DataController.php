@@ -98,7 +98,6 @@ class DataController extends Controller
         Post::find($id)->delete();
         Comment::where('post_id', '=', $id)->delete('*');
         Save::where('post_id', '=', $id)->delete('*');
-        Tag::join('post_tag', 'tags.id', '=', 'post_tag.tag_id')->where('post_id', '=', $id)->delete('*');
 
         return redirect('/admin/posts');
     }

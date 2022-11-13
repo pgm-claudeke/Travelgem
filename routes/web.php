@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes 
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -37,6 +37,7 @@ Route::post('/edited-post', [PostController::class, 'editPost']);
 Route::post('/store-comment', [PostController::class, 'postComment']);
 Route::post('/saved-post', [PostController::class, 'savePost']);
 Route::get('/post/{id}/unsave', [PostController::class, 'unsavePost']);
+Route::get('/post/{postId}/{commentId}/delete-comment', [PostController::class, 'deleteComment']);
 
 Route::get('/travel', [TravelController::class, 'index']);
 Route::get('/travel/{country}/{city?}', [TravelController::class, 'country']);
@@ -47,7 +48,7 @@ Route::get('/user/settings', [UserController::class, 'settings']);
 Route::post('/user/settings/edit', [UserController::class, 'editUser']); 
 Route::get('/user/password', [UserController::class, 'password']); 
 Route::get('/user/delete', [UserController::class, 'delete']); 
-Route::get('/user/{id}/delete', [UserController::class, 'deleteUser']); 
+Route::get('/user/{id}/delete', [UserController::class, 'deleteUser']);  
 Route::get('/user/add-post', [AddPostController::class, 'index']);
 Route::post('/store-post', [AddPostController::class, 'save']);
 

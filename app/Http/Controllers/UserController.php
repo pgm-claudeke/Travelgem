@@ -125,12 +125,16 @@ class UserController extends Controller
 
         $numberOfPosts = Post::where('user_id', $id)->count();
 
-        return view('user.other', [
-            'user' => $user, 
-            'otherUser' => $otherUser,
-            'posts' => $posts,
-            'numberOfPosts' => $numberOfPosts,
-        ]);
+        if ($user->id === $otherUser->id ) {
+            return redirect('/user');
+        } else {
+            return view('user.other', [
+                'user' => $user, 
+                'otherUser' => $otherUser,
+                'posts' => $posts,
+                'numberOfPosts' => $numberOfPosts,
+            ]);
+        }
     }
 
 }

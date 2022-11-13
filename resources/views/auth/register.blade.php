@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('title', 'register')
+
 @section('content')
 <section class="section section--auth">
     <div class="preview">
@@ -64,7 +66,7 @@
             </form>
         </div>
         <div class="form--auth">
-            <p class="form__description">already have an account?</p>
+            <p class="form__description">Already have an account?</p>
             <a href="/login" class="btn btn--large btn--reversed">Login</a>
         </div>
     </div>

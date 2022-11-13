@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'users')
+@section('title', 'admin')
 
 @section('content')
 <section class="section section--warning">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'new')
+
 @section('content')
 <section class="section">
     <div class="container container--form container--create"> 

@@ -52,10 +52,18 @@
 
 .btn--unsave {
     padding: 0rem 1.4rem;
-    background-color: #F01312;
+    background-color: $color_error;
 }
 
 .btn--red {
     background-color: $color_error;
+}
+
+.btn--delete {
+    border: none;
+    background-color: transparent;
+    color: $color_error;
+    font-size: 0.8rem;
+    padding: 0;
 }
 

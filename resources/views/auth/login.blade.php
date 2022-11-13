@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('title', 'login')
+
 @section('content')
 <section class="section section--auth">
     <div class="preview">

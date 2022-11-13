@@ -83,6 +83,12 @@ class PostController extends Controller
         return redirect('/post/' . $postId);
     }
 
+    public function deleteComment($postId, $commentId) {
+        Comment::find($commentId)->delete();
+
+        return redirect('/post/' . $postId);
+    }
+
     public function editPostPage($id) {
         $post = Post::find($id);
 
@@ -134,7 +140,6 @@ class PostController extends Controller
         Post::find($id)->delete();
         Comment::where('post_id', '=', $id)->delete('*');
         Save::where('post_id', '=', $id)->delete('*');
-        Tag::join('post_tag', 'tags.id', '=', 'post_tag.tag_id')->where('post_id', '=', $id)->delete('*');
 
         return redirect('/home');
     }

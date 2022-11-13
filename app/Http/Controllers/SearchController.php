@@ -22,17 +22,13 @@ class SearchController extends Controller
 
         if (strlen($search) > 0) {
             $users = User::where('username', 'like', '%' . $search . '%')
-            ->orWhere('firstName', 'like', '%' . $search . '%')
-            ->orWhere('lastName', 'like', '%' . $search . '%')
             ->get('*')
             ->sortBy('id');
 
-            $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
-            ->where('country', 'like', '%' . $search . '%')
+            $posts = Post::where('country', 'like', '%' . $search . '%')
             ->orWhere('city', 'like', '%' . $search . '%')
             ->orWhere('title', 'like', '%' . $search . '%')
-            ->orWhere('users.username', 'like', '%' . $search . '%')
-            ->get(['posts.*', 'users.username'])
+            ->get('*')
             ->sortBy('id');
 
         } else {

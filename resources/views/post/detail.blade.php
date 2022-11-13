@@ -87,6 +87,11 @@
                                 </div>
                             </a>
                             {{$comment->comment}}
+                            @if($comment->user_id === $user->id)
+                            <form action="{{url('/post/' . $post->id . '/' . $comment->id . '/delete-comment')}}" method="get">
+                                <button type="submit" class="btn btn--delete"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                            @endif
                         </li>
                         @endforeach
                     </ul>

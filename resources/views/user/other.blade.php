@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'users')
+
 @section('content')
 
 <section class="section">
@@ -7,7 +9,7 @@
         <div class="user__info">
             <div class="user__img-box"> 
                     @if($otherUser->user_img)
-                    <img class="user__img" src="{{ asset('storage/user_images/' . $user->user_img) }}" alt="{{$user->user_img}}">
+                    <img class="user__img" src="{{ asset('storage/user_images/' . $otherUser->user_img) }}" alt="{{$otherUser->user_img}}">
                     @else
                     <img class="user__img"  src="{{ asset('storage/user_images/user.jpg') }}" alt="user.jpg">
                     @endif

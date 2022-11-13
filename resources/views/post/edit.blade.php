@@ -26,11 +26,11 @@
                 </div>
                 <div class="post__container post__container--info">  
                     <input class="post__title input input--large" type="text" name="title" placeholder="Title" value="{{$post->title}}">
-                    <input class="post__description input input--large" type="textarea" name="description" placeholder="Description" value="{{$post->description}}">
+                    <textarea class="post__description input input--large input--text-edit" type="textarea" name="description" placeholder="Description" value="">{{$post->description}}</textarea>
                 </div> 
                 <div class="post__container post__container--info">
                     <label for="tags" class="post__title">Tags</label>
-                    <div class="input__tags">
+                    <div class="input__tags input__tags--edit">
                         @foreach($tags as $tag)
                         <div>
                             @if($post->tags->contains('id', $tag->id))
